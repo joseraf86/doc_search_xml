@@ -1,0 +1,10 @@
+
+<div align = "center">
+  <%= link_to(image_tag("busconest.png", {:border => "0", :width => "200"}),"" ) %>
+  <br/><br/>
+  <%= render_partial "cuadro_buscar" %>
+</div>
+
+<br/>
+<br/>
+

@@ -1,0 +1,216 @@
+body{
+  font-size: 13px;
+}
+
+td{
+  font-size: 13px;
+	padding: 3px 5px 3px 5px;
+	color: DarkGreen;
+}
+
+#titulo_aplicacion{
+  background-color: #EEF;
+  color: #191970;
+  font-size: 1.35em;
+  font-weight: bold;
+  vertical-align: top;
+  text-align: center;
+ /* margin-bottom: 22px; */
+  padding: 10px;
+  margin: 0px 20px 22px 20px;
+  border: 1px solid #DDD;
+}
+
+#links_principal{
+	//display: inline;
+  text-align: center;
+  margin-bottom: 30px;	
+  font-size: 1.1em;
+}
+
+a:hover{
+	background-color: #DDD;
+}
+
+
+
+h1, h2, h3{
+	display: inline;
+}
+
+#cuerpo{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 1em;
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#cuerpo a:visited{
+	color: DarkGreen;
+}
+#cuerpo a:link{
+	color: DarkGreen;
+}
+
+
+
+#cuerpo table{
+	border-collapse: collapse;
+	border-color: ForestGreen;
+}
+
+
+.mensaje{
+  //font-size: 0.87em;
+  text-align: center;
+  background-color: #EEF;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding: 3px 5px 3px 5px;
+  border: 1px solid #BBB;
+}
+
+.errores{
+  //font-size: 0.87em;
+  text-align: center;
+  color: white;
+  background-color: Red;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding: 3px 5px 3px 5px;
+  border: 1px solid #BBB;
+}
+
+.alerta{
+  //font-size: 0.87em;
+  text-align: center;
+  background-color: #FF9;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding: 3px 5px 3px 5px;
+  border: 1px solid #BBB;
+}
+
+/* info pagina */
+
+#info_pagina{
+  //display: inline;
+  color: #191970;
+  margin-top: 15px;
+  margin-bottom: 12px;
+}
+
+#res_busqueda{
+  //display: inline;
+  color: #191970;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  font-size: 1em;
+}
+
+#funcion_pagina{
+  display: inline;
+  font-weight: normal;
+  font-size: 1.5em;
+}
+#info_funcion_pagina{
+  display: inline;
+  font-size: 1.2em;
+}
+
+#sub_funcion_pagina{
+  display: inline;
+  font-size: 1.2em;
+}
+#info_sub_funcion_pagina{
+  display: inline;
+  font-size: 1.2em;
+}
+
+
+#info_busqueda_avanzada{
+  display: inline;
+  font-size: 15px;
+  color: Maroon;
+}
+
+#info_busqueda_avanzada a:visited{
+  font-size: 0.8em;
+  color: Maroon;
+}
+#info_busqueda_avanzada a:link{
+  font-size: 0.8em;
+  color: Maroon;
+}
+
+
+#paginacion{
+  display: inline;
+  font-size: 1.2em;
+}
+
+#error_campo{
+  display: inline;
+  color: Crimson;
+}
+#advertencia_campo{
+  display: inline;
+  color: DarkGreen;
+}
+
+.etiqueta_campo_busqueda_avanzada{
+  display: inline;
+  color: blue;
+}
+
+#pie{
+  background-color: #EEF;
+  color: #191970;
+  vertical-align: middle;
+  text-align: center;
+  padding: 8px;
+  margin: 0px 20px 0px 20px;
+  border: 1px solid #DDD;
+}
+
+
+
+/*
+.titulo_documento{
+	color: yellow;
+}
+*/
+
+.etiqueta_campo_documento{
+  display: inline;
+	color: DarkGreen;
+  font-weight: bold;
+}
+
+/* TRASH
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+

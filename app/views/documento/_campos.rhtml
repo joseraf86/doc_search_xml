@@ -1,0 +1,35 @@
+<%= error_messages_for 'documento' %>
+
+<!--[form:documento]-->
+
+<div class="seccion_formulario">
+<div class="campos"> 
+
+
+
+<p>
+<label for="titulo">Titulo:</label>
+<%= text_area_tag 'titulo', nil, {:cols => "110", :rows => 3} %>
+</p>
+
+<p>
+<label for="resumen">Resumen:</label>
+<%= text_area_tag 'resumen', nil, {:cols => "110", :rows => 9} %>
+</p>
+
+<p>
+<label for="palabras_clave">Palabras clave:</label>
+<%= text_area_tag 'palabras_clave', nil, {:cols => "110", :rows => 3} %>
+</p>
+
+
+<p>
+<%= check_box_tag "acepto","1",true %>
+<label for="acepto" style='display:inline'>Acepto publicar este trabajo para fines académicos</label>
+
+</p>
+<br/>
+
+</div>
+</div>
+

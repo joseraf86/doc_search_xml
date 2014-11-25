@@ -1,0 +1,21 @@
+<% 
+  hash_campos = {
+
+  :fecha_publicacion => "13-11-2007", :calificacion => "20", :tiene_premio => "si",
+  :nombre_autor => "JORGE SANCHEZ", :correo_autor => "jorge@jorge.com", :telefonos_autor => "0412-7044955", :promedio_general_autor => "15", :promedio_ponderado_autor => "15", :eficiencia_autor => "1.000", 
+  :mencion => "ATI", :licenciatura => "COMPUTACION", :escuela => "COMPUTACION", :facultad => "CIENCIAS", :universidad => "UCV", 
+  :integridad => "integridad"
+
+  }
+  
+  cadena_descifrada =  hash_campos.inject(""){|acumulado, actual| acumulado + actual.collect{ |e| "#{e}!" }.join  }
+  cadena_cifrada = cadena_descifrada.tr(ApplicationController::CadenaTraduccionA, ApplicationController::CadenaTraduccionB)
+  h = Hash[*cadena_descifrada.split("!")] #asi debe de obtenerse en el destino
+%>
+
+<% form_tag({:action => 'nuevo'},{:id => "formulario_datos_documento"}) do %>
+  <%= hidden_field_tag :data, cadena_cifrada %>
+  <%= link_to_function "Cargar Documento", "document.getElementById('formulario_datos_documento').submit()" %>
+<% end %>
+
+

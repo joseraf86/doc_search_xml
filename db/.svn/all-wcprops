@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/1304/conest1/busconest/db
+END
+development_structure.sql
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1304/conest1/busconest/db/development_structure.sql
+END
+schema.rb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1304/conest1/busconest/db/schema.rb
+END
+busconest_production.sql
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1304/conest1/busconest/db/busconest_production.sql
+END

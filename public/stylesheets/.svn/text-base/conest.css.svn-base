@@ -1,0 +1,516 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:1em;
+	color: #036;
+}
+
+body{
+	background-color: #EEF;/*#09C;*/
+}
+
+#contenedor {
+	background-color: #FFF;
+	margin: 4px;
+}
+
+#cabecera{
+	height: 100px;
+	border: 2px solid #036;
+	background-image:url(../images/banner_conest.jpg);
+	background-repeat:no-repeat;
+}
+
+#cabecera h2{
+	position:relative;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.95em;
+	font-weight: normal;
+	padding-left: 10px;
+	padding-top: 80px;
+}
+
+#cabecera #tope{
+	position:absolute;
+	top: 8px;
+	right: 14px;
+	font-size: 0.80em;
+}
+
+#cabecera #tope #contactenos{
+	display: inline;
+	color:#999;
+	font-size: 0.70em;
+	margin-right: 5px;	
+}
+
+#cabecera #tope #cerrar_sesion{
+	margin-left: 20px;
+}
+
+#contactenos a{
+	text-decoration: none;
+}
+
+#cabecera #tope #fecha{
+	display: inline;
+	color:#999;
+	font-size: 0.75em;
+	margin-right: 10px;
+}
+
+#formulario_inicio{
+	width: 210px;
+	float: right; 	
+	margin-top: -70px;
+	padding-left: 10px;
+	margin-right: 8px !important; /* Arreglar en IE*/
+	margin-right: 3px;
+}
+
+#simple_captcha img {
+    margin: 2px 0px 0px 10px;
+}
+
+#formulario_inicio p{
+	padding:0px;
+	margin: 2px 0px 0px 10px;
+}
+
+#formulario_inicio label{
+	display: block;
+}
+
+
+#formulario_inicio h2{
+	padding-right: 10px;
+	text-align: right;
+}
+
+#ubicacion{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#ubicacion #ubicador #migaja{
+	color: #69C;
+	font-size: 0.75em;
+	margin-bottom: 10px;
+}
+
+#ubicacion #ubicador h1{
+	font-size: 1.5em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+
+#ubicacion #datos_usuario{
+	float: right;
+	margin-right: 5px;	
+	text-align:right;
+	background-image:url(../images/logo_ciencias_grande.gif);
+	background-repeat:no-repeat;
+	background-position: 100% 9%;
+	padding-right: 50px;
+	color: #69C;
+	font-size: 0.80em;
+}
+
+#regresar1{
+	margin-top: 10px;
+	position: relative;
+	right: -48px;
+	font-size: 0.9em;
+}
+
+h3{
+	display: inline;
+	font-size: 0.75em;
+}
+
+#texto_inicio {
+	text-align: justify;
+	padding-right: 10px;
+	min-height: 275px !important;  /* Arreglar en IE*/
+	height: auto !important; /* Arreglar en IE*/
+	height: 275px;
+}
+
+#cuerpo{
+	margin-left: 20px;
+	margin-bottom: 20px;
+	font-size: 0.85em;
+}
+
+.campos{
+	padding: 10px;
+	margin-right: 5px;
+	border: 1px solid #C96;
+}
+
+.campos label{
+	display: block;
+	font-weight: bold;
+	font-size: 0.96em;
+}
+
+.campos_seguidos{
+	padding: 0px 10px 3px 0px;
+	border: 1px solid #C96;
+}
+
+.campos_seguidos label{
+	display: inline;
+	font-weight: bold;
+	font-size: 0.96em;
+}
+
+.seccion_formulario{
+	margin-top: 12px;
+	margin-right: 10px;
+}
+
+.seccion_formulario h2{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 1.2em;
+	color: #999;
+}
+
+
+#cuerpo p{
+	margin-top: 5px;
+}
+
+#regresar2{
+	margin-top: 15px;
+	position: absolute;
+	right: 15px;
+	font-size: 0.9em;
+}
+
+.campo_obligatorio{
+	margin-top: 10px;
+	font-size: 0.8em;
+}
+
+#pie{
+	background-image:url(../images/logo_ciencias_peq.gif);
+	background-repeat:no-repeat;
+	margin-top: 40px;
+	padding-left: 10px;
+	padding-top: 5px;
+	font-size: 0.82em;
+	background-color: #036;
+	color: #FFF;
+	height: 20px;
+
+}
+
+#pie_corto{
+	background-image:url(../images/logo_ciencias_peq.gif);
+	background-repeat:no-repeat;
+	margin-top: 0px;
+	padding-left: 10px;
+	padding-top: 5px;
+	font-size: 0.82em;
+	background-color: #036;
+	color: #FFF;
+	height: 20px;
+
+}
+
+
+#derechos{
+	display: inline;
+	font-size: 0.82em;
+	color: #FFF;
+	padding-left:20px;
+}
+
+#derechos a{
+	display: inline;
+	color: #FFF;
+}
+
+#pie_enlaces{
+	font-size: 0.82em;
+	background-color: #036;
+	color: #FFF;
+	display: inline;
+	float: right;
+	text-align: right;
+}
+
+#pie_enlaces a{
+	font-size: 0.82em;
+	color: #FFF;
+	padding-right: 10px;
+}
+
+/* vetanas popup */
+.seccion_formulario h4{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #999;
+	display: inline;
+	font-size: 0.75em;
+}
+
+#contenedor #popup_titulo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+    font-size: 0.82em;	
+}
+.campo_popup{
+    padding: 10px;
+	margin-right: 5px;
+	border: 1px solid #C96;
+}
+.campo_popup label{
+	display: block;
+	font-weight: bold;
+	font-size: 0.75em;
+}
+.campo_popup p{
+	display: block;
+	font-weight: normal;
+	font-size: 0.75em;
+}
+
+.submit_popup {
+	display: block;
+	font-weight: normal;
+	font-size: 0.75em;
+}
+
+
+
+/* mensajes en flash */
+
+.errores{
+background-color: #F44;
+margin-top: 44px;
+color:#FFF;
+margin-right: 10px;
+padding: 2px 10px 2px 10px;
+margin-bottom: 20px;
+border: 1px solid #000;
+font-size: 1.3em;
+}
+
+.errores_inicio{
+background-color: #F44;
+margin-top: 2px;
+color:#FFF;
+padding: 2px 10px 2px 10px;
+margin-bottom: 4px;
+font-size: 0.8em;
+}
+
+
+.mensaje{
+font-size: 1.3em;
+background-color: #EEF;  /* #FFC; */
+margin-top: 44px;
+margin-right: 10px;
+padding: 2px 10px 2px 10px;
+margin-bottom: 20px;
+border: 1px solid #000;
+}
+
+.alerta{
+font-size: 1.3em;
+background-color: #FF9;
+margin-top: 44px;
+margin-right: 10px;
+padding: 2px 10px 2px 10px;
+border: 1px solid #000;
+}
+/* fin mensajes en flash */
+
+/* Agregado por el scaffold*/
+.fieldWithErrors {
+  display:inline;
+  padding: 1px;
+  background-color: #F44;
+}
+
+#errorExplanation {
+  padding: 2px 10px 2px 10px;
+  margin-top: 44px;
+  margin-right: 10px;
+  padding-bottom: 12px;
+  color:#000;
+  margin-bottom: 20px;
+  border: 2px solid #F00;
+  background-color: #FFF;
+}
+
+#errorExplanation h2 {
+  text-align: left;  
+  padding-top: 5px;
+  font-size: 0.9em;
+  font-weight: bold;
+  background-color: #F44;
+  color: #FFF;
+  margin-bottom: 5px;
+  padding-left: 5px;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  color: #000;
+}
+#errorExplanation ul{
+	margin-top: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 0.9em;
+  color: #000;
+  margin-left: 20px;
+  margin-top: 2px;
+  
+}
+/* Fin Agregado por el scaffold*/
+
+/* Estilos del Cuerpo */
+#cuerpo h1{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 1.4em;
+	margin-top: 5px;
+}
+
+#cuerpo h2{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 1.28em;
+	margin-top: 5px;
+}
+
+#cuerpo h3{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 1.15em;
+	margin-top: 5px;
+}
+
+#cuerpo h4{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 1.05em;
+	margin-top: 5px;
+}
+
+#cuerpo h5{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 0.9em;
+	margin-top: 5px;
+}
+
+#cuerpo h6{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 0.8em;
+	margin-top: 5px;
+}
+
+#cuerpo p{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 1.0em;
+	margin-top: 10px;
+}
+
+#cuerpo li{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 1.0em;
+	margin-left: 15px;
+}
+
+#cuerpo table{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 1.0em;
+	border-collapse:collapse;
+	margin-top: 5px;
+}
+
+#cuerpo th{	
+	font-family: Arial, Helvetica, sans-serif;
+    background-color: #EEE;
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-left: 15px;
+	border: 1px solid #C96;
+	padding: 2px 5px 2px 5px;
+}
+
+#cuerpo td{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 1.0em;
+	margin-left: 15px;
+	border: 1px solid #C96;
+	padding: 1px 5px 1px 5px;
+}
+
+#cabecera a:hover, #cuerpo a:hover, #ubicacion a:hover{	
+	background-color: #EEE;
+}
+/* Fin estilos del Cuerpo */
+
+/* Trucos IE */
+br.borrador{
+	clear: both; 
+	line-height: 0px;
+	display: block;
+}
+/* Fin Trucos IE */
+
+
+#materias{
+    font-size: 0.75em;
+    border: 1px solid #C96;
+    margin: 10px;
+}
+
+#materias_modificar{
+    font-size: 0.72em;
+    /*border: 1px solid #C96; */
+    margin-top: 40px;
+    margin-left:0px;
+}
+
+#materias_inscribir{
+    margin: 10px;
+    padding: 10px;
+}
+
+#materias table, #materias td{
+    border: 0px solid #C96;
+
+}
+
+#horarios table, #horarios td{
+    border: 0px solid #C96;
+}
+
+.horario_seccion, .horario_seccion tr, .horario_seccion td{
+border: 1px solid #C96;
+border-collapse:separate;
+}
+
+hr{
+    color:#CCF;
+    margin-right:10px;
+}
+
+/* FIN LAYAOUTS ORIGINALES 28-01-2007 */

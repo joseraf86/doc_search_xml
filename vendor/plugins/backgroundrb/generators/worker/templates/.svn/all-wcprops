@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1304/conest1/busconest/vendor/plugins/backgroundrb/generators/worker/templates
+END
+unit_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1304/conest1/busconest/vendor/plugins/backgroundrb/generators/worker/templates/unit_test.rb
+END
+worker.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1304/conest1/busconest/vendor/plugins/backgroundrb/generators/worker/templates/worker.rb
+END

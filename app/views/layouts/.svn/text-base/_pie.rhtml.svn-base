@@ -1,0 +1,10 @@
+<div align = "center" id="pie"> 
+  <%= link_to "Principal", :controller => "documento", :action => "busqueda_sencilla" %> - 
+  <%= link_to "Búsqueda avanzada", :controller => "documento", :action => "busqueda_avanzada" %> - 
+  <%= link_to "Ayuda", :controller => "documento", :action => "ayuda" %> - 
+  <%= link_to "Acerca de", :controller => "documento", :action => "acerca_de" %> - 
+  <%= link_to "Facultad de Ciencias", "http://www.ciens.ucv.ve"%>
+  <%=xbr%>
+  CONEST 2007
+</div> 
+

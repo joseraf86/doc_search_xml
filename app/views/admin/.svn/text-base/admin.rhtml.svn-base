@@ -1,0 +1,47 @@
+<%
+  @titulo_pagina = h ApplicationController::Nombre + "- Administracion"
+  @funcion_pagina = "Administracion basica del repositorio"
+  @info_funcion_pagina = "" #"Haga los ajustes del sistema, o invoque a funciones"
+%>
+<%
+
+%>
+
+
+<div id = "info_pagina">
+  <div id="funcion_pagina"><%=@funcion_pagina%></div>. 
+  <div id="info_funcion_pagina"><%=@info_funcion_pagina%> </div>
+</div>
+
+
+
+<% form_tag({:action => 'actualizar_parametros'},{:id => "formulario_datos_documento"}) do %>
+  <%="Procesado automatico de documentos nuevos:"%>
+  <%= radio_button_tag( 'procesado_automatico', "si", checked = ("si" == @procesado_automatico), {})%> Habilitado
+  <%= radio_button_tag( 'procesado_automatico', "no", checked = ("no" == @procesado_automatico), {})%> Deshabilitado
+  <%=xbr%>
+  <%="Host conest administracion:"%>
+  <%= text_field_tag "host_conest_admin", @host_conest_admin, {:size => 40}%>
+  <%=xbr%>
+  <%="Host conest estudiantes:"%>
+  <%= text_field_tag "host_conest_estudiantes", @host_conest_estudiantes, {:size => 40}%>
+  <br/><br/>
+  <%=submit_tag "Actualizar parametros" %>
+<% end %>
+
+<%=xbr%>
+Comandos del administrador<br/>
+<%=xbr%>
+<%= button_to("Procesar los documentos sin procesar", {:action => 'procesar_no_procesados'}, {:confirm => "Se procederá a procesar los documentos. Esta seguro?"}) %>
+<%= button_to("Desprocesar todos los documentos", {:action => 'desprocesar_todo'}, {:confirm => "Se procederá a eliminar las estructuras auxiliares de los documentos. Esta seguro?\n(Se conservan los documentos)"}) %>
+<%= button_to("Eliminar todos los documentos", {:action => 'eliminar_todo'}, {:confirm => "Se eliminaran todos los documentos. Esta seguro?"}) %>
+
+<br/>
+<div id="llamada_repetida"><%= periodically_call_remote :url => {:action => "status_procesar_documento_dinamico" }, :frequency => 2 %></div>
+<div id="status_proceso_documento"></div>
+
+<div id="llamada_repetida"><%= periodically_call_remote :url => {:action => "status_procesar_documentos_dinamico" }, :frequency => 2 %></div>
+<div id="status_proceso_documentos"></div>
+
+
+

@@ -1,0 +1,81 @@
+<%
+  @titulo_pagina = h "Resultado de la Búsqueda"
+  @funcion_pagina = ""
+  @info_funcion_pagina = info_paginacion_actual(@paginador)
+%>
+
+<div align = "center">
+
+<%=link_to( image_tag("busconest.png",{:height => "60", :border => "0"}), "busqueda_sencilla")%>
+<%=render_partial "cuadro_buscar" if @busqueda.tipo == Busqueda::Sencilla%>
+<%=info_busqueda_avanzada(@busqueda) if @busqueda.tipo == Busqueda::Avanzada%>
+
+</div> 
+
+<%=xbr%>
+<hr size="1"/>
+<div id = "res_busqueda">
+  <div id="funcion_pagina"><%=@funcion_pagina%></div>
+  <div id="info_funcion_pagina"><%=@info_funcion_pagina%> </div>
+</div>
+
+<hr size="1"/>
+<%xbr%>
+<br/>
+<br/>
+
+<% for documento in @documentos %>
+
+  <div class = "titulo_documento">
+  <b>
+
+<% if documento.publico=="1" %>
+<a class = "titulo_documento" style = "{color: #191970;}" href = <%= url_for(:action => "obtener_archivo", :id => documento.id) %> > <%= documento.titulo_html + " [#{documento.formato.upcase}]"%></a>
+<%
+else
+%>
+<span class = "titulo_documento" style = "{color: #191970;}"> <%= documento.titulo_html.upcase + " [#{documento.formato.upcase}]"%></span>
+<%
+end
+%>
+</b>
+
+  <% if session[:administrador] %>
+    <%= link_to('Eliminar', {:controller => 'admin', :action => 'eliminar', :id => documento.id}, {:confirm => "Se eliminará \"#{documento.titulo}\". Esta seguro?", :style => "{color: red;}" }) %>
+    <%= link_to('Modificar Datos', {:controller => 'documento', :action => 'modificar', :id => documento.id}) %>
+  <% end %>
+  <br/>
+  <div class = "etiqueta_campo_documento">Licenciatura: </div>
+  <%=documento.licenciatura%>
+    <%=image_tag "vineta_separador3.gif"%>
+  <div class = "etiqueta_campo_documento">Tipo: </div>
+  <%= documento.clasificacion_documento_academico.nombre.upcase %>
+    <%=image_tag "vineta_separador3.gif"%>
+  <div class = "etiqueta_campo_documento">Fecha presentacion: </div>
+  <%=documento.fecha%>
+    <%=image_tag "vineta_separador3.gif"%>
+  <div class = "etiqueta_campo_documento">Autor: </div>
+  <%=documento.autor%>
+  <% if documento.clasificacion_documento_academico.id == ClasificacionDocumentoAcademico::ID_TRABAJO_ESPECIAL_DE_GRADO %>
+    <div class = "etiqueta_campo_documento">Tutor: </div>
+    <%= documento.tutor %>
+  <% end%>
+  <% if documento.resumen.size > 1 %>
+    <div class = "etiqueta_campo_documento">Resumen: </div>
+    <%= documento.resumen[0,100] %>...
+  <% end %>
+  </div>
+
+
+<br/><br/>
+
+<% end %>
+
+<br/>
+<br/>
+<%=h("Página de resultados:") if (@paginador.cantidad_paginas > 1) %> &nbsp &nbsp <%= links_paginacion(@paginador) %>
+
+
+<br />
+
+

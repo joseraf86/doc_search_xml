@@ -1,0 +1,14 @@
+<%  form_tag :action=>'procesar_modificar' do %>
+	<%=hidden_field_tag :id,params[:id]%>
+	<p>
+		<label>Titulo:</label><br/>
+		<%=text_area_tag :titulo,@d.titulo,:size=>"120x5"%>
+	</p>
+	<p>
+		<label>Resumen:</label><br/>
+		<%=text_area_tag :resumen,@d.resumen,:size=>"120x20"%>
+	</p>
+	<p>
+		<%=submit_tag "Modificar"%>
+	</p>
+<%  end %>

@@ -1,0 +1,70 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+tegjuan:
+  id: 1
+  metadata: "<documento>
+<fecha_publicacion>18-07-2007</fecha_publicacion>
+<calificacion>20</calificacion>
+<tiene_premio>no</tiene_premio>
+<mencion/>
+<licenciatura_id>C</licenciatura_id>
+<licenciatura>COMPUTACION</licenciatura>
+<escuela>COMPUTACION</escuela>
+<facultad>CIENCIAS</facultad>
+<universidad>UNIVERSIDAD CENTRAL DE VENEZUELA - LOS CHAGUARAMOS</universidad>
+<autor>
+<nombre>JUAN PEREZ</nombre>
+<cedula>16000111</cedula>
+<correo>juan-perez@juan-perez.com</correo>
+<telefonos>0212-6667788, 0412-6667788</telefonos>
+<promedio_general>15.94</promedio_general>
+<promedio_ponderado>16.10</promedio_ponderado>
+<eficiencia>1.0</eficiencia>
+</autor>
+<nombre_archivo>trabajo_especial_grado.pdf</nombre_archivo>
+<extension_formato_archivo>pdf</extension_formato_archivo>
+<titulo_html>Trabajo de Tesis General de Juan</titulo_html>
+<titulo>Trabajo de Tesis General de Juan</titulo>
+<resumen_html>El resumen es una muestra del contenido del documento</resumen_html>
+<resumen>El resumen es una muestra del contenido del documento</resumen>
+<palabras_clave>palabra1 palabra2 palabra3</palabras_clave>
+</documento>"
+
+teg2autores:
+  id: 2
+  metadata: "<documento>
+<fecha_publicacion>05-10-2007</fecha_publicacion>
+<calificacion>20</calificacion>
+<tiene_premio>no</tiene_premio>
+<mencion/>
+<licenciatura_id>B</licenciatura_id>
+<licenciatura>BIOLOGIA</licenciatura>
+<escuela>BIOLOGIA</escuela>
+<facultad>CIENCIAS</facultad>
+<universidad>UNIVERSIDAD CENTRAL DE VENEZUELA - LOS CHAGUARAMOS</universidad>
+<autor>
+<nombre>JOSE RODRIGUEZ</nombre>
+<cedula>15000111</cedula>
+<correo>jose-rodriguez@jose-rodriguez.com</correo>
+<telefonos>0212-3337788, 0412-3337788</telefonos>
+<promedio_general>11.02</promedio_general>
+<promedio_ponderado>10.51</promedio_ponderado>
+<eficiencia>7.0</eficiencia>
+</autor>
+<autor>
+<nombre>ANA FLOR</nombre>
+<cedula>18000111</cedula>
+<correo>ana-flor@ana-flor.com</correo>
+<telefonos>0212-2227788, 0412-2227788</telefonos>
+<promedio_general>19.02</promedio_general>
+<promedio_ponderado>18.51</promedio_ponderado>
+<eficiencia>5.0</eficiencia>
+</autor>
+<nombre_archivo>trabajo_especial_grado.pdf</nombre_archivo>
+<extension_formato_archivo>pdf</extension_formato_archivo>
+<titulo_html>Trabajo de Tesis General de Jose y Ana</titulo_html>
+<resumen_html>El resumen es una muestra del contenido del documento</resumen_html>
+<titulo>Trabajo de Tesis General de Jose y Ana</titulo>
+<resumen>El resumen es una muestra del contenido del documento</resumen>
+<palabras_clave>palabra1 palabra2 palabra3</palabras_clave>
+</documento>"
+

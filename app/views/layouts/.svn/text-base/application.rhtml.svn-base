@@ -1,0 +1,115 @@
+<html>
+<head>
+  <title>
+    <%if @titulo_pagina%>
+      <%=@titulo_pagina%>
+    <%else%>
+      <%=ApplicationController::Nombre%>
+    <%end%>
+  </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <% stylesheet_link_tag "upload-progress" %>
+  <% javascript_include_tag "upload-progress" %>
+  <%= stylesheet_link_tag "buscador" %>
+  <%= javascript_include_tag :defaults %>
+
+<!--
+<%
+=begin
+
+  CONVENCIONES SOBRE LAS VISTAS
+    Todo mensaje se pasa por flash  flash[:mensaje_error], flash[:mensaje_alerta], flash[:mensaje]
+
+=end
+%>
+-->
+
+</head>
+
+
+
+<body>
+  <!--HEADER-->
+  <div id="titulo_aplicacion">
+    <%=ApplicationController::Nombre%>
+  </div>
+  <div id="links_principal">
+    <% if session[:administrador] %>
+    [
+      <%=link_to("Administrar", {:controller => "admin", :action => "admin"}, {:style => "{color: green;}" }) %>
+      , <%=link_to("Cerrar Sesión", {:controller => "admin", :action => "cerrar_sesion"}, {:confirm => "Desea cerrar la sesion del administrador?", :style => "{color: green;}" }) %>
+    ]
+    <% end %>
+  </div>
+  <!--FIN HEADER-->
+
+
+
+  <!--INICIO DEL CUERPO-->
+  <div id="cuerpo">
+    <!--Mensajes-->
+    <% if flash[:mensaje_error].size > 0 %>
+    	<div class="errores"><b>Error: </b><%=h flash[:mensaje_error]%></div> 
+    <%end %>
+    <% if flash[:mensaje_alerta].size > 0 %>
+    	<div class="alerta"><b>Alerta: </b><%=h flash[:mensaje_alerta]%></div> 
+    <%end %>
+    <% if flash[:mensaje].size > 0 %>
+    	<div class="mensaje"><b>Información: </b><%=h flash[:mensaje]%></div> 
+    <% end %>
+
+    
+
+    <%=@content_for_layout%>
+
+    <br/>
+    <br/>
+
+  </div>
+  <!-- FIN DEL CUERPO -->
+
+  
+  <!--INICIO DEL PIE-->
+  <%=render_partial("layouts/pie")%>
+  <!-- FIN DEL PIE -->
+
+</body>
+</html>
+
+<% yield %>
+
+
+<!-- trash
+<%
+=begin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=end
+%>
+-->
+
+
+
+

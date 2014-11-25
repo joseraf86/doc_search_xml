@@ -1,0 +1,7 @@
+if @worker
+  page.replace_html 'status_proceso_documentos', image_tag("aero_light.gif") + "Procesando  Documento #{@progreso} de #{@total}. " + h(@status.to_s)
+else
+  page.replace_html 'status_proceso_documentos', @status.to_s
+end
+
+

@@ -1,0 +1,1923 @@
+# Logfile created on Fri May 04 18:46:47 -0430 2012 by logger.rb/1.2.6
+  [4;36;1mSQL (0.000211)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mParametroGeneral Columns (0.001279)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000840)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#index (for 127.0.0.1 at 2012-05-05 19:40:28) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"index"}
+Redirected to http://localhost:3000/documento/busqueda_sencilla
+Completed in 0.00242 (412 reqs/sec) | DB: 0.00233 (96%) | 302 Found [http://localhost/]
+  [4;35;1mParametroGeneral Columns (0.001676)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000384)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-05-05 19:40:28) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.01723)
+Rendered layouts/_pie (0.00428)
+Completed in 0.09544 (10 reqs/sec) | Rendering: 0.05119 (53%) | DB: 0.00206 (2%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;35;1mParametroGeneral Columns (0.002285)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000400)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_sencillo (for 127.0.0.1 at 2012-05-05 19:40:48) [POST]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"commit"=>" Buscar documentos ", "controller"=>"documento", "action"=>"buscar_sencillo", "cadena_busqueda"=>"busconest"}
+  [4;35;1mPalabra Load (0.001176)[0m   [0mSELECT * FROM palabra WHERE (texto = 'busconest') LIMIT 1[0m
+  [4;36;1mSQL (0.043393)[0m   [0;1mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;35;1mSQL (0.321101)[0m   [0mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;36;1mPalabra Columns (0.001525)[0m   [0;1mSHOW FIELDS FROM palabra[0m
+  [4;35;1mSQL (0.046261)[0m   [0mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (296636) AND documento_id = documento.id GROUP BY documento_id HAVING true AND COUNT(*) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.46607 (2 reqs/sec) | DB: 0.41614 (89%) | 302 Found [http://localhost/documento/buscar_sencillo]
+  [4;36;1mParametroGeneral Columns (0.001654)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000447)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-05-05 19:40:49) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;36;1mDocumento Columns (0.002296)[0m   [0;1mSHOW FIELDS FROM documento[0m
+  [4;35;1mDocumento Load (0.232716)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 57) [0m
+  [4;36;1mDocumento Load (0.121250)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 1) [0m
+  [4;35;1mDocumento Load (0.137313)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 534) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00198)
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.002014)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.020541)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000634)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000617)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00095)
+Completed in 1.77265 (0 reqs/sec) | Rendering: 1.25113 (70%) | DB: 0.51948 (29%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;36;1mParametroGeneral Columns (0.001688)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000453)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#obtener_archivo (for 127.0.0.1 at 2012-05-05 19:41:07) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"id"=>"1", "controller"=>"documento", "action"=>"obtener_archivo"}
+  [4;36;1mDocumento Columns (0.002088)[0m   [0;1mSHOW FIELDS FROM documento[0m
+  [4;35;1mDocumento Load (0.154834)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 1) [0m
+Sending data Documento_1.pdf
+Completed in 0.23070 (4 reqs/sec) | Rendering: 0.00008 (0%) | DB: 0.15906 (68%) | 200 OK [http://localhost/documento/obtener_archivo/1]
+  [4;36;1mParametroGeneral Columns (0.001622)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000461)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_sencillo (for 127.0.0.1 at 2012-05-05 19:41:53) [POST]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"commit"=>" Buscar documentos ", "controller"=>"documento", "action"=>"buscar_sencillo", "cadena_busqueda"=>"web base"}
+  [4;36;1mPalabra Load (0.001209)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'web') LIMIT 1[0m
+  [4;35;1mPalabra Load (0.000935)[0m   [0mSELECT * FROM palabra WHERE (texto = 'base') LIMIT 1[0m
+  [4;36;1mSQL (0.000283)[0m   [0;1mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;35;1mSQL (0.000223)[0m   [0mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;36;1mPalabra Columns (0.001472)[0m   [0;1mSHOW FIELDS FROM palabra[0m
+  [4;35;1mSQL (0.017016)[0m   [0mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 36.9270788143542),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (296494, 296263) AND documento_id = documento.id GROUP BY documento_id HAVING true AND COUNT(*) = 2 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.03143 (31 reqs/sec) | DB: 0.02322 (73%) | 302 Found [http://localhost/documento/buscar_sencillo]
+  [4;36;1mParametroGeneral Columns (0.001662)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000447)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-05-05 19:41:53) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;36;1mDocumento Columns (0.003081)[0m   [0;1mSHOW FIELDS FROM documento[0m
+  [4;35;1mDocumento Load (0.110246)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 40) [0m
+  [4;36;1mDocumento Load (0.152507)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 233) [0m
+  [4;35;1mDocumento Load (0.153047)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 48) [0m
+  [4;36;1mDocumento Load (0.138010)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 57) [0m
+  [4;35;1mDocumento Load (0.509717)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 190) [0m
+  [4;36;1mDocumento Load (0.319464)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 51) [0m
+  [4;35;1mDocumento Load (0.483551)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 55) [0m
+  [4;36;1mDocumento Load (1.165643)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 42) [0m
+  [4;35;1mDocumento Load (0.148102)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 217) [0m
+  [4;36;1mDocumento Load (0.184051)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 352) [0m
+  [4;35;1mDocumento Load (0.092860)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 498) [0m
+  [4;36;1mDocumento Load (0.233543)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 69) [0m
+  [4;35;1mDocumento Load (0.146402)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 207) [0m
+  [4;36;1mDocumento Load (0.121902)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 242) [0m
+  [4;35;1mDocumento Load (0.188719)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 255) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00198)
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001549)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000498)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000615)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000677)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000635)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000686)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000700)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000591)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000665)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000644)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000836)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000687)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000603)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000564)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000708)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000605)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00090)
+Completed in 9.95971 (0 reqs/sec) | Rendering: 5.78594 (58%) | DB: 4.16422 (41%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;36;1mParametroGeneral Columns (0.001734)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000431)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-05-05 19:42:14) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"id"=>"10", "controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;36;1mDocumento Columns (0.002270)[0m   [0;1mSHOW FIELDS FROM documento[0m
+  [4;35;1mDocumento Load (0.104479)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 371) [0m
+  [4;36;1mDocumento Load (0.039967)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 603) [0m
+  [4;35;1mDocumento Load (0.055684)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 437) [0m
+  [4;36;1mDocumento Load (0.102454)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 110) [0m
+  [4;35;1mDocumento Load (0.117699)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 470) [0m
+  [4;36;1mDocumento Load (0.107571)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 409) [0m
+  [4;35;1mDocumento Load (0.061522)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 602) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00218)
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001641)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000500)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000648)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000713)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000667)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.003695)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000578)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000638)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00090)
+Completed in 2.67420 (0 reqs/sec) | Rendering: 2.06663 (77%) | DB: 0.60289 (22%) | 200 OK [http://localhost/documento/resultado_consulta/10]
+  [4;36;1mParametroGeneral Columns (0.001658)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000371)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_sencillo (for 127.0.0.1 at 2012-05-05 19:42:32) [POST]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"commit"=>" Buscar documentos ", "controller"=>"documento", "action"=>"buscar_sencillo", "cadena_busqueda"=>"dame todo"}
+  [4;36;1mSQL (0.014266)[0m   [0;1mSELECT id FROM documento[0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.01885 (53 reqs/sec) | DB: 0.01629 (86%) | 302 Found [http://localhost/documento/buscar_sencillo]
+  [4;35;1mParametroGeneral Columns (0.001831)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000499)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-05-05 19:42:32) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.001976)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.041773)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 1) [0m
+  [4;35;1mDocumento Load (0.144229)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 2) [0m
+  [4;36;1mDocumento Load (0.103600)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 3) [0m
+  [4;35;1mDocumento Load (0.040557)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 4) [0m
+  [4;36;1mDocumento Load (0.171603)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 5) [0m
+  [4;35;1mDocumento Load (0.056675)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 6) [0m
+  [4;36;1mDocumento Load (0.036589)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 7) [0m
+  [4;35;1mDocumento Load (0.041631)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 8) [0m
+  [4;36;1mDocumento Load (0.125601)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 9) [0m
+  [4;35;1mDocumento Load (0.030110)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 10) [0m
+  [4;36;1mDocumento Load (0.447912)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 11) [0m
+  [4;35;1mDocumento Load (0.027499)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 12) [0m
+  [4;36;1mDocumento Load (0.261033)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 13) [0m
+  [4;35;1mDocumento Load (0.196857)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 14) [0m
+  [4;36;1mDocumento Load (0.154710)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 15) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00195)
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001556)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000499)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000676)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000602)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000612)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000688)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000623)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000679)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000610)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000694)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000633)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000672)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000670)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000916)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000632)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000601)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00092)
+Completed in 6.04952 (0 reqs/sec) | Rendering: 4.14167 (68%) | DB: 1.89605 (31%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001532)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000370)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-05-05 19:42:57) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00195)
+Rendered layouts/_pie (0.00110)
+Completed in 0.00707 (141 reqs/sec) | Rendering: 0.00584 (82%) | DB: 0.00190 (26%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;35;1mParametroGeneral Columns (0.002020)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000419)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-05-05 19:43:02) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00173)
+Rendered layouts/_pie (0.00090)
+Completed in 0.00642 (155 reqs/sec) | Rendering: 0.00523 (81%) | DB: 0.00244 (38%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;35;1mParametroGeneral Columns (0.001651)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000367)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-05-05 19:43:05) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001615)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.002234)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00079)
+Completed in 0.06678 (14 reqs/sec) | Rendering: 0.06184 (92%) | DB: 0.00587 (8%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001712)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000363)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-05-05 19:43:27) [POST]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"frase"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento ", "contenido"=>"", "resumen"=>"", "fecha_desde"=>"", "controller"=>"documento", "fecha_hasta"=>"", "action"=>"buscar_avanzado", "clasificacion_documento_academico_id"=>"", "autor"=>"rafael", "titulo"=>""}
+  [4;35;1mPalabra Load (0.001189)[0m   [0mSELECT * FROM palabra WHERE (texto = 'rafael') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000849)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'rafael') LIMIT 1[0m
+  [4;35;1mSQL (0.014193)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.287717)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001772)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.002296)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (306633) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_autor > 0 AND palabra_id IN ( 306633) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.31738 (3 reqs/sec) | DB: 0.31009 (97%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.002389)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000382)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-05-05 19:43:28) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.001969)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.043901)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 614) [0m
+  [4;35;1mDocumento Load (0.363609)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 407) [0m
+  [4;36;1mDocumento Load (0.076368)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 493) [0m
+  [4;35;1mDocumento Load (0.367438)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 204) [0m
+  [4;36;1mDocumento Load (0.135126)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 594) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.002653)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000998)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000590)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000715)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000641)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000727)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00084)
+Completed in 2.44557 (0 reqs/sec) | Rendering: 1.44542 (59%) | DB: 0.99751 (40%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001629)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000556)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#ayuda (for 127.0.0.1 at 2012-05-05 19:44:04) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"ayuda"}
+Rendering  within layouts/application
+Rendering documento/ayuda
+Rendered layouts/_pie (0.00368)
+Completed in 0.02647 (37 reqs/sec) | Rendering: 0.02515 (95%) | DB: 0.00219 (8%) | 200 OK [http://localhost/documento/ayuda]
+  [4;35;1mParametroGeneral Columns (0.001988)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000529)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-05-05 19:44:33) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000715)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001700)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00086)
+Completed in 0.02379 (42 reqs/sec) | Rendering: 0.01921 (80%) | DB: 0.00493 (20%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001589)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000372)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-05-05 19:44:43) [POST]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"frase"=>"desarrollo web", "palabras_clave"=>"", "commit"=>" Buscar documento ", "contenido"=>"", "resumen"=>"", "fecha_desde"=>"", "controller"=>"documento", "fecha_hasta"=>"", "action"=>"buscar_avanzado", "clasificacion_documento_academico_id"=>"", "autor"=>"", "titulo"=>""}
+  [4;35;1mPalabra Load (0.001214)[0m   [0mSELECT * FROM palabra WHERE (texto = 'desarrollo') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000906)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'web') LIMIT 1[0m
+  [4;35;1mSQL (0.000306)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000223)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001463)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (2.505764)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 36.9270788143542),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (297019, 296494) AND documento_id = documento.id AND metadata LIKE '%desarrollo web%' GROUP BY documento_id HAVING true ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 2.51914 (0 reqs/sec) | DB: 2.51184 (99%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.001929)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000570)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-05-05 19:44:46) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.002110)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.165338)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 51) [0m
+  [4;35;1mDocumento Load (0.118692)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 40) [0m
+  [4;36;1mDocumento Load (0.056614)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 498) [0m
+  [4;35;1mDocumento Load (0.086574)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 352) [0m
+  [4;36;1mDocumento Load (0.128801)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 207) [0m
+  [4;35;1mDocumento Load (0.264386)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 507) [0m
+  [4;36;1mDocumento Load (0.072159)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 242) [0m
+  [4;35;1mDocumento Load (0.222668)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 243) [0m
+  [4;36;1mDocumento Load (0.126907)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 60) [0m
+  [4;35;1mDocumento Load (0.078290)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 391) [0m
+  [4;36;1mDocumento Load (0.171165)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 416) [0m
+  [4;35;1mDocumento Load (0.172049)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 480) [0m
+  [4;36;1mDocumento Load (0.161956)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 449) [0m
+  [4;35;1mDocumento Load (0.162258)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 599) [0m
+  [4;36;1mDocumento Load (0.187240)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 536) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001359)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000544)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000684)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000700)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000628)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000689)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000633)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000724)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000625)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000616)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000774)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000634)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000632)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000593)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000621)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000616)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00084)
+Completed in 7.28668 (0 reqs/sec) | Rendering: 5.08127 (69%) | DB: 2.19078 (30%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.005324)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.005285)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-05-05 19:45:25) [POST]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"frase"=>"\"desarrollo web\"", "palabras_clave"=>"", "commit"=>" Buscar documento ", "contenido"=>"", "resumen"=>"", "fecha_desde"=>"", "controller"=>"documento", "fecha_hasta"=>"", "action"=>"buscar_avanzado", "clasificacion_documento_academico_id"=>"", "autor"=>"", "titulo"=>""}
+Redirected to http://localhost:3000/documento/busqueda_avanzada
+Completed in 0.00199 (503 reqs/sec) | DB: 0.01061 (533%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.003121)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000518)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-05-05 19:45:26) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000718)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001615)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00086)
+Completed in 0.02162 (46 reqs/sec) | Rendering: 0.01814 (83%) | DB: 0.00597 (27%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001797)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000421)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-05-05 19:45:38) [POST]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"frase"=>"'desarrollo web'", "palabras_clave"=>"", "commit"=>" Buscar documento ", "contenido"=>"", "resumen"=>"", "fecha_desde"=>"", "controller"=>"documento", "fecha_hasta"=>"", "action"=>"buscar_avanzado", "clasificacion_documento_academico_id"=>"", "autor"=>"", "titulo"=>""}
+Redirected to http://localhost:3000/documento/busqueda_avanzada
+Completed in 0.00195 (512 reqs/sec) | DB: 0.00222 (113%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.001611)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000438)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-05-05 19:45:38) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000730)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.002046)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00082)
+Completed in 0.01674 (59 reqs/sec) | Rendering: 0.01295 (77%) | DB: 0.00482 (28%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001664)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000455)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#ayuda (for 127.0.0.1 at 2012-05-05 19:45:42) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"ayuda"}
+Rendering  within layouts/application
+Rendering documento/ayuda
+Rendered layouts/_pie (0.00183)
+Completed in 0.00487 (205 reqs/sec) | Rendering: 0.00377 (77%) | DB: 0.00212 (43%) | 200 OK [http://localhost/documento/ayuda]
+  [4;35;1mParametroGeneral Columns (0.001630)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000372)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#acerca_de (for 127.0.0.1 at 2012-05-05 19:45:44) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"acerca_de"}
+Rendering  within layouts/application
+Rendering documento/acerca_de
+  [4;35;1mParametroGeneral Load (0.000572)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+Rendered layouts/_pie (0.00211)
+Completed in 0.04777 (20 reqs/sec) | Rendering: 0.04608 (96%) | DB: 0.00257 (5%) | 200 OK [http://localhost/documento/acerca_de]
+  [4;36;1mParametroGeneral Columns (0.001624)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000403)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#acerca_de (for 127.0.0.1 at 2012-05-05 19:47:00) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"acerca_de"}
+Rendering  within layouts/application
+Rendering documento/acerca_de
+  [4;36;1mParametroGeneral Load (0.000592)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+Rendered layouts/_pie (0.00169)
+Completed in 0.00641 (156 reqs/sec) | Rendering: 0.00470 (73%) | DB: 0.00262 (40%) | 200 OK [http://localhost/documento/acerca_de]
+  [4;35;1mParametroGeneral Columns (0.001447)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000355)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#acerca_de (for 127.0.0.1 at 2012-05-05 19:47:06) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"acerca_de"}
+Rendering  within layouts/application
+Rendering documento/acerca_de
+  [4;35;1mParametroGeneral Load (0.000473)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+Rendered layouts/_pie (0.00182)
+Completed in 0.00630 (158 reqs/sec) | Rendering: 0.00466 (74%) | DB: 0.00227 (36%) | 200 OK [http://localhost/documento/acerca_de]
+  [4;36;1mParametroGeneral Columns (0.001669)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000453)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-05-05 19:47:54) [GET]
+  Session ID: b787d7360731ff457ed517ad9e7a61be
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00160)
+Rendered layouts/_pie (0.00085)
+Completed in 0.00617 (162 reqs/sec) | Rendering: 0.00512 (83%) | DB: 0.00212 (34%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;36;1mParametroGeneral Columns (0.001556)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000449)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#index (for 192.168.2.101 at 2012-05-06 01:41:27) [GET]
+  Session ID: 9f3af3948df64e144c45f0fcd97ba089
+  Parameters: {"controller"=>"documento", "action"=>"index"}
+Redirected to http://192.168.2.103:3000/documento/busqueda_sencilla
+Completed in 0.00264 (379 reqs/sec) | DB: 0.00200 (76%) | 302 Found [http://192.168.2.103/]
+  [4;36;1mParametroGeneral Columns (0.001440)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000331)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 192.168.2.101 at 2012-05-06 01:41:27) [GET]
+  Session ID: 9f3af3948df64e144c45f0fcd97ba089
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00217)
+Rendered layouts/_pie (0.00094)
+Completed in 0.01030 (97 reqs/sec) | Rendering: 0.00574 (55%) | DB: 0.00177 (17%) | 200 OK [http://192.168.2.103/documento/busqueda_sencilla]
+  [4;36;1mParametroGeneral Columns (0.001602)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000374)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_sencillo (for 192.168.2.101 at 2012-05-06 01:41:43) [POST]
+  Session ID: 9f3af3948df64e144c45f0fcd97ba089
+  Parameters: {"commit"=>" Buscar documentos ", "controller"=>"documento", "action"=>"buscar_sencillo", "cadena_busqueda"=>"busconest"}
+  [4;36;1mPalabra Load (0.001092)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'busconest') LIMIT 1[0m
+  [4;35;1mSQL (0.000283)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000225)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001392)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.001439)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (296636) AND documento_id = documento.id GROUP BY documento_id HAVING true AND COUNT(*) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://192.168.2.103:3000/documento/resultado_consulta
+Completed in 0.02054 (48 reqs/sec) | DB: 0.00641 (31%) | 302 Found [http://192.168.2.103/documento/buscar_sencillo]
+  [4;35;1mParametroGeneral Columns (0.001611)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000454)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 192.168.2.101 at 2012-05-06 01:41:43) [GET]
+  Session ID: 9f3af3948df64e144c45f0fcd97ba089
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.002115)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.124947)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 57) [0m
+  [4;35;1mDocumento Load (0.143057)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 1) [0m
+  [4;36;1mDocumento Load (0.083812)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 534) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00211)
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001544)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000643)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000625)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000650)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00091)
+Completed in 1.41873 (0 reqs/sec) | Rendering: 1.05745 (74%) | DB: 0.35946 (25%) | 200 OK [http://192.168.2.103/documento/resultado_consulta]
+  [4;36;1mSQL (0.000409)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mParametroGeneral Columns (0.002441)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.001191)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#index (for 127.0.0.1 at 2012-06-21 13:58:18) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"index"}
+Redirected to http://localhost:3000/documento/busqueda_sencilla
+Completed in 0.00439 (227 reqs/sec) | DB: 0.00404 (92%) | 302 Found [http://localhost/]
+  [4;35;1mParametroGeneral Columns (0.001481)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000330)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-06-21 13:58:19) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.01724)
+Rendered layouts/_pie (0.00250)
+Completed in 0.09234 (10 reqs/sec) | Rendering: 0.03959 (42%) | DB: 0.00181 (1%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;35;1mParametroGeneral Columns (0.001777)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000425)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 13:58:41) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.010495)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.002523)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00188)
+Completed in 0.06182 (16 reqs/sec) | Rendering: 0.04768 (77%) | DB: 0.01522 (24%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001810)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000521)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 13:58:49) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"commit"=>" Buscar documento ", "autor"=>"juan", "resumen"=>"", "titulo"=>"", "fecha_hasta"=>"", "controller"=>"documento", "contenido"=>"", "palabras_clave"=>"", "fecha_desde"=>"", "action"=>"buscar_avanzado", "frase"=>"", "clasificacion_documento_academico_id"=>""}
+  [4;35;1mPalabra Load (0.012971)[0m   [0mSELECT * FROM palabra WHERE (texto = 'juan') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000867)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'juan') LIMIT 1[0m
+  [4;35;1mSQL (1.253413)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.584310)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001425)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.037075)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (304044) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_autor > 0 AND palabra_id IN ( 304044) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 1.96485 (0 reqs/sec) | DB: 1.89239 (96%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.002251)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000481)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 13:58:51) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.002679)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.348295)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 370) [0m
+  [4;35;1mDocumento Load (0.351756)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 129) [0m
+  [4;36;1mDocumento Load (0.755726)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 598) [0m
+  [4;35;1mDocumento Load (0.666763)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 551) [0m
+  [4;36;1mDocumento Load (0.141228)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 440) [0m
+  [4;35;1mDocumento Load (0.150797)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 534) [0m
+  [4;36;1mDocumento Load (0.240492)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 292) [0m
+  [4;35;1mDocumento Load (0.076027)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 264) [0m
+  [4;36;1mDocumento Load (0.195890)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 602) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001859)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001044)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000682)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000633)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000695)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000853)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000701)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000720)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000684)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000879)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00083)
+Completed in 6.18110 (0 reqs/sec) | Rendering: 3.23273 (52%) | DB: 2.94114 (47%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.002019)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000422)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#obtener_archivo (for 127.0.0.1 at 2012-06-21 13:59:04) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"obtener_archivo", "id"=>"370"}
+  [4;35;1mDocumento Columns (0.002730)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.128287)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 370) [0m
+Sending data Documento_370.pdf
+Completed in 0.19786 (5 reqs/sec) | Rendering: 0.00011 (0%) | DB: 0.13346 (67%) | 200 OK [http://localhost/documento/obtener_archivo/370]
+  [4;35;1mParametroGeneral Columns (0.001854)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000388)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 13:59:14) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000750)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.002104)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00087)
+Completed in 0.01738 (57 reqs/sec) | Rendering: 0.01347 (77%) | DB: 0.00510 (29%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001880)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000444)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-06-21 13:59:20) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00165)
+Rendered layouts/_pie (0.00113)
+Completed in 0.00676 (147 reqs/sec) | Rendering: 0.00573 (84%) | DB: 0.00232 (34%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;36;1mSQL (0.000297)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mParametroGeneral Columns (0.001554)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000452)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#index (for 127.0.0.1 at 2012-06-21 14:45:56) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"index"}
+Redirected to http://localhost:3000/documento/busqueda_sencilla
+Completed in 0.07487 (13 reqs/sec) | DB: 0.00230 (3%) | 302 Found [http://localhost/]
+  [4;35;1mParametroGeneral Columns (0.001695)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000429)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-06-21 14:45:56) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00446)
+Rendered layouts/_pie (0.00397)
+Completed in 0.02107 (47 reqs/sec) | Rendering: 0.01913 (90%) | DB: 0.00212 (10%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;35;1mParametroGeneral Columns (0.001710)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000452)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_sencillo (for 127.0.0.1 at 2012-06-21 14:46:01) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"buscar_sencillo", "commit"=>" Buscar documentos ", "cadena_busqueda"=>"juan"}
+  [4;35;1mPalabra Load (0.000572)[0m   [0mSELECT * FROM palabra WHERE (texto = 'juan') LIMIT 1[0m
+  [4;36;1mSQL (0.000307)[0m   [0;1mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;35;1mSQL (0.000268)[0m   [0mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;36;1mPalabra Columns (0.001497)[0m   [0;1mSHOW FIELDS FROM palabra[0m
+  [4;35;1mSQL (0.079058)[0m   [0mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (304044) AND documento_id = documento.id GROUP BY documento_id HAVING true AND COUNT(*) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.09327 (10 reqs/sec) | DB: 0.08386 (89%) | 302 Found [http://localhost/documento/buscar_sencillo]
+  [4;36;1mParametroGeneral Columns (0.001610)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000476)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 14:46:01) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;36;1mDocumento Columns (0.002488)[0m   [0;1mSHOW FIELDS FROM documento[0m
+  [4;35;1mDocumento Load (0.221418)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 442) [0m
+  [4;36;1mDocumento Load (1.233722)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 403) [0m
+  [4;35;1mDocumento Load (0.166421)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 364) [0m
+  [4;36;1mDocumento Load (0.109181)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 131) [0m
+  [4;35;1mDocumento Load (0.408102)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 27) [0m
+  [4;36;1mDocumento Load (0.053543)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 481) [0m
+  [4;35;1mDocumento Load (0.041398)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 508) [0m
+  [4;36;1mDocumento Load (0.284467)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 479) [0m
+  [4;35;1mDocumento Load (0.377560)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 55) [0m
+  [4;36;1mDocumento Load (0.151048)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 514) [0m
+  [4;35;1mDocumento Load (0.098729)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 454) [0m
+  [4;36;1mDocumento Load (0.698508)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 389) [0m
+  [4;35;1mDocumento Load (0.086405)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 126) [0m
+  [4;36;1mDocumento Load (0.344752)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 51) [0m
+  [4;35;1mDocumento Load (0.075479)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 468) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00234)
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001738)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000752)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001513)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000683)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000571)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000677)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000613)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000633)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000742)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000685)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000737)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000673)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000652)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000723)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000662)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000624)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00097)
+Completed in 9.02562 (0 reqs/sec) | Rendering: 4.64655 (51%) | DB: 4.36798 (48%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;36;1mParametroGeneral Columns (0.001502)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000342)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_sencillo (for 127.0.0.1 at 2012-06-21 14:53:34) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"buscar_sencillo", "commit"=>" Buscar documentos ", "cadena_busqueda"=>"dame todo"}
+  [4;36;1mSQL (0.016668)[0m   [0;1mSELECT id FROM documento[0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.02133 (46 reqs/sec) | DB: 0.01851 (86%) | 302 Found [http://localhost/documento/buscar_sencillo]
+  [4;35;1mParametroGeneral Columns (0.001767)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000417)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 14:53:34) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.002566)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.245487)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 1) [0m
+  [4;35;1mDocumento Load (0.118073)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 2) [0m
+  [4;36;1mDocumento Load (0.203291)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 3) [0m
+  [4;35;1mDocumento Load (0.075028)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 4) [0m
+  [4;36;1mDocumento Load (0.175769)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 5) [0m
+  [4;35;1mDocumento Load (0.133680)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 6) [0m
+  [4;36;1mDocumento Load (0.041218)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 7) [0m
+  [4;35;1mDocumento Load (0.066852)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 8) [0m
+  [4;36;1mDocumento Load (0.163465)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 9) [0m
+  [4;35;1mDocumento Load (0.047170)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 10) [0m
+  [4;36;1mDocumento Load (0.557803)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 11) [0m
+  [4;35;1mDocumento Load (0.029862)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 12) [0m
+  [4;36;1mDocumento Load (0.244780)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 13) [0m
+  [4;35;1mDocumento Load (0.242765)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 14) [0m
+  [4;36;1mDocumento Load (0.194695)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 15) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00228)
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001940)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000518)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000690)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000916)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000732)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000736)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000731)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000714)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000662)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000688)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000618)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000694)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000652)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001253)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000727)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000700)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00114)
+Completed in 6.91888 (0 reqs/sec) | Rendering: 4.35121 (62%) | DB: 2.55766 (36%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;36;1mSQL (0.000573)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mParametroGeneral Columns (0.001891)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000851)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-06-21 18:34:16) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00302)
+Rendered layouts/_pie (0.00221)
+Completed in 0.01342 (74 reqs/sec) | Rendering: 0.01188 (88%) | DB: 0.00331 (24%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;35;1mParametroGeneral Columns (0.002515)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000682)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#acerca_de (for 127.0.0.1 at 2012-06-21 18:34:22) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"acerca_de"}
+Rendering  within layouts/application
+Rendering documento/acerca_de
+  [4;35;1mParametroGeneral Load (0.000819)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+Rendered layouts/_pie (0.00340)
+Completed in 0.04659 (21 reqs/sec) | Rendering: 0.04355 (93%) | DB: 0.00402 (8%) | 200 OK [http://localhost/documento/acerca_de]
+  [4;36;1mParametroGeneral Columns (0.001764)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000448)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#ayuda (for 127.0.0.1 at 2012-06-21 18:34:33) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"ayuda"}
+Rendering  within layouts/application
+Rendering documento/ayuda
+Rendered layouts/_pie (0.00366)
+Completed in 0.03858 (25 reqs/sec) | Rendering: 0.03670 (95%) | DB: 0.00221 (5%) | 200 OK [http://localhost/documento/ayuda]
+  [4;36;1mParametroGeneral Columns (0.001814)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000510)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 18:34:42) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001056)[0m   [0;1mSELECT * FROM clasificacion_documento_academico [0m
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001780)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00087)
+Completed in 0.02008 (49 reqs/sec) | Rendering: 0.01603 (79%) | DB: 0.00516 (25%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;36;1mParametroGeneral Columns (0.001797)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000459)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:35:48) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"1/7/2009", "clasificacion_documento_academico_id"=>"3", "resumen"=>"", "fecha_desde"=>"1/5/2008", "contenido"=>"", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;36;1mSQL (0.019337)[0m   [0;1mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;35;1mSQL (0.329684)[0m   [0mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;36;1mSQL (0.001696)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 12.3090262714514),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND peso_numerico1 BETWEEN 1209616200 AND 1246422600 AND clasificacion_documento_academico_id = 3 AND documento_id = documento.id GROUP BY documento_id HAVING true ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.35567 (2 reqs/sec) | DB: 0.35297 (99%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.001507)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000389)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:35:48) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+Redirected to http://localhost:3000/documento/busqueda_avanzada
+Completed in 0.00236 (423 reqs/sec) | DB: 0.00190 (80%) | 302 Found [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001369)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000489)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 18:35:48) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000833)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001436)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00091)
+Completed in 0.10465 (9 reqs/sec) | Rendering: 0.10054 (96%) | DB: 0.00413 (3%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001930)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000744)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:36:32) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"1/6/2008", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"1/6/2008", "contenido"=>"", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;35;1mSQL (0.000508)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000266)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mSQL (0.517442)[0m   [0mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 12.3090262714514),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND peso_numerico1 BETWEEN 1212294600 AND 1212294600 AND documento_id = documento.id GROUP BY documento_id HAVING true ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.52215 (1 reqs/sec) | DB: 0.52089 (99%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;36;1mParametroGeneral Columns (0.002240)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000474)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:36:33) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+Redirected to http://localhost:3000/documento/busqueda_avanzada
+Completed in 0.00243 (410 reqs/sec) | DB: 0.00271 (111%) | 302 Found [http://localhost/documento/resultado_consulta]
+  [4;36;1mParametroGeneral Columns (0.001751)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000439)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 18:36:33) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000696)[0m   [0;1mSELECT * FROM clasificacion_documento_academico [0m
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001837)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00084)
+Completed in 0.02000 (50 reqs/sec) | Rendering: 0.01569 (78%) | DB: 0.00472 (23%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;36;1mParametroGeneral Columns (0.001738)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000456)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:37:02) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"1/6/2008", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"1/6/2007", "contenido"=>"", "autor"=>"jose", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;36;1mPalabra Load (0.001366)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'jose') LIMIT 1[0m
+  [4;35;1mPalabra Load (0.000424)[0m   [0mSELECT * FROM palabra WHERE (texto = 'jose') LIMIT 1[0m
+  [4;36;1mSQL (0.000336)[0m   [0;1mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;35;1mSQL (0.000262)[0m   [0mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;36;1mPalabra Columns (0.001547)[0m   [0;1mSHOW FIELDS FROM palabra[0m
+  [4;35;1mSQL (0.028414)[0m   [0mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (297382) AND peso_numerico1 BETWEEN 1180670400 AND 1212294600 AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_autor > 0 AND palabra_id IN ( 297382) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.04268 (23 reqs/sec) | DB: 0.03454 (80%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;36;1mParametroGeneral Columns (0.001477)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000385)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:37:02) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+Redirected to http://localhost:3000/documento/busqueda_avanzada
+Completed in 0.00226 (441 reqs/sec) | DB: 0.00186 (82%) | 302 Found [http://localhost/documento/resultado_consulta]
+  [4;36;1mParametroGeneral Columns (0.001718)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000430)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 18:37:02) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000757)[0m   [0;1mSELECT * FROM clasificacion_documento_academico [0m
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001641)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00086)
+Completed in 0.02112 (47 reqs/sec) | Rendering: 0.01695 (80%) | DB: 0.00455 (21%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;36;1mParametroGeneral Columns (0.001865)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000393)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:37:19) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"", "contenido"=>"dame todo", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;36;1mPalabra Load (0.016541)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'dame') LIMIT 1[0m
+  [4;35;1mPalabra Load (0.015672)[0m   [0mSELECT * FROM palabra WHERE (texto = 'todo') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.008569)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'dame') LIMIT 1[0m
+  [4;35;1mPalabra Load (0.006070)[0m   [0mSELECT * FROM palabra WHERE (texto = 'todo') LIMIT 1[0m
+  [4;36;1mSQL (0.000401)[0m   [0;1mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;35;1mSQL (0.000266)[0m   [0mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;36;1mPalabra Columns (0.002111)[0m   [0;1mSHOW FIELDS FROM palabra[0m
+  [4;35;1mSQL (0.023964)[0m   [0mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 36.9270788143542),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (372068, 297434) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_contenido > 0 AND palabra_id IN ( 372068, 297434) ) = 2 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.09186 (10 reqs/sec) | DB: 0.07585 (82%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;36;1mParametroGeneral Columns (0.001857)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000382)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:37:19) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;36;1mDocumento Columns (0.002262)[0m   [0;1mSHOW FIELDS FROM documento[0m
+  [4;35;1mDocumento Load (0.596246)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 270) [0m
+  [4;36;1mDocumento Load (1.623111)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 589) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.002111)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000505)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001959)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00090)
+Completed in 3.20629 (0 reqs/sec) | Rendering: 0.97667 (30%) | DB: 2.22843 (69%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;36;1mParametroGeneral Columns (0.001805)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000615)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 18:37:54) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000753)[0m   [0;1mSELECT * FROM clasificacion_documento_academico [0m
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001779)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00092)
+Completed in 0.01789 (55 reqs/sec) | Rendering: 0.01394 (77%) | DB: 0.00495 (27%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;36;1mParametroGeneral Columns (0.002705)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000692)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-06-21 18:38:00) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00178)
+Rendered layouts/_pie (0.00091)
+Completed in 0.00627 (159 reqs/sec) | Rendering: 0.00522 (83%) | DB: 0.00340 (54%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;36;1mParametroGeneral Columns (0.001684)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.001433)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_sencillo (for 127.0.0.1 at 2012-06-21 18:38:10) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"cadena_busqueda"=>"dame todo", "controller"=>"documento", "action"=>"buscar_sencillo", "commit"=>" Buscar documentos "}
+  [4;36;1mSQL (0.013750)[0m   [0;1mSELECT id FROM documento[0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.01855 (53 reqs/sec) | DB: 0.01687 (90%) | 302 Found [http://localhost/documento/buscar_sencillo]
+  [4;35;1mParametroGeneral Columns (0.001733)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000392)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:38:10) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.002515)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.059377)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 1) [0m
+  [4;35;1mDocumento Load (0.041122)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 2) [0m
+  [4;36;1mDocumento Load (0.144232)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 3) [0m
+  [4;35;1mDocumento Load (0.025406)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 4) [0m
+  [4;36;1mDocumento Load (0.078688)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 5) [0m
+  [4;35;1mDocumento Load (0.090842)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 6) [0m
+  [4;36;1mDocumento Load (0.021329)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 7) [0m
+  [4;35;1mDocumento Load (0.026578)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 8) [0m
+  [4;36;1mDocumento Load (0.049301)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 9) [0m
+  [4;35;1mDocumento Load (0.016110)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 10) [0m
+  [4;36;1mDocumento Load (0.302099)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 11) [0m
+  [4;35;1mDocumento Load (0.018829)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 12) [0m
+  [4;36;1mDocumento Load (0.129083)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 13) [0m
+  [4;35;1mDocumento Load (0.093272)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 14) [0m
+  [4;36;1mDocumento Load (0.120747)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 15) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00201)
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001781)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000586)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000618)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000643)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000625)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000723)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000674)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001415)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000680)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000679)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000671)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001453)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000913)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000678)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000650)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001218)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00093)
+Completed in 5.43093 (0 reqs/sec) | Rendering: 4.18425 (77%) | DB: 1.23566 (22%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001716)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000453)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-06-21 18:39:08) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00178)
+Rendered layouts/_pie (0.00087)
+Completed in 0.00648 (154 reqs/sec) | Rendering: 0.00541 (83%) | DB: 0.00217 (33%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;35;1mParametroGeneral Columns (0.001599)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000501)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 18:39:10) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000725)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001820)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00102)
+Completed in 0.01620 (61 reqs/sec) | Rendering: 0.01256 (77%) | DB: 0.00465 (28%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001691)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000452)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:39:53) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"1/6/2009", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"1/6/2008", "contenido"=>"web", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;35;1mPalabra Load (0.022551)[0m   [0mSELECT * FROM palabra WHERE (texto = 'web') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000643)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'web') LIMIT 1[0m
+  [4;35;1mSQL (0.000483)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000465)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001694)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.026774)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (296494) AND peso_numerico1 BETWEEN 1212294600 AND 1243830600 AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_contenido > 0 AND palabra_id IN ( 296494) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.06267 (15 reqs/sec) | DB: 0.05475 (87%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.001401)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000428)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:39:53) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.002244)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.200341)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 40) [0m
+  [4;35;1mDocumento Load (0.128205)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 48) [0m
+  [4;36;1mDocumento Load (0.195683)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 51) [0m
+  [4;35;1mDocumento Load (0.309912)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 55) [0m
+  [4;36;1mDocumento Load (0.171920)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 69) [0m
+  [4;35;1mDocumento Load (0.112070)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 60) [0m
+  [4;36;1mDocumento Load (1.327083)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 42) [0m
+  [4;35;1mDocumento Load (0.283879)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 67) [0m
+  [4;36;1mDocumento Load (0.193905)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 186) [0m
+  [4;35;1mDocumento Load (0.139965)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 58) [0m
+  [4;36;1mDocumento Load (0.110046)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 66) [0m
+  [4;35;1mDocumento Load (0.124818)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 71) [0m
+  [4;36;1mDocumento Load (0.172285)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 64) [0m
+  [4;35;1mDocumento Load (0.181014)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 153) [0m
+  [4;36;1mDocumento Load (0.100339)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 52) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001773)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000516)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000647)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001071)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000694)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000686)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000646)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000735)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000948)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000673)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000672)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000668)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000706)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000680)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000704)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000691)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00082)
+Completed in 9.77152 (0 reqs/sec) | Rendering: 5.99337 (61%) | DB: 3.76805 (38%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001637)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000406)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-06-21 18:40:46) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00165)
+Rendered layouts/_pie (0.00099)
+Completed in 0.00638 (156 reqs/sec) | Rendering: 0.00530 (83%) | DB: 0.00204 (32%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;35;1mParametroGeneral Columns (0.001833)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000434)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_sencillo (for 127.0.0.1 at 2012-06-21 18:40:51) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"cadena_busqueda"=>"web", "controller"=>"documento", "action"=>"buscar_sencillo", "commit"=>" Buscar documentos "}
+  [4;35;1mPalabra Load (0.000563)[0m   [0mSELECT * FROM palabra WHERE (texto = 'web') LIMIT 1[0m
+  [4;36;1mSQL (0.000304)[0m   [0;1mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;35;1mSQL (0.000259)[0m   [0mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;36;1mPalabra Columns (0.001562)[0m   [0;1mSHOW FIELDS FROM palabra[0m
+  [4;35;1mSQL (0.010664)[0m   [0mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (296494) AND documento_id = documento.id GROUP BY documento_id HAVING true AND COUNT(*) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.02201 (45 reqs/sec) | DB: 0.01562 (70%) | 302 Found [http://localhost/documento/buscar_sencillo]
+  [4;36;1mParametroGeneral Columns (0.001744)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000330)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:40:52) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;36;1mDocumento Columns (0.002170)[0m   [0;1mSHOW FIELDS FROM documento[0m
+  [4;35;1mDocumento Load (0.028879)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 40) [0m
+  [4;36;1mDocumento Load (0.146084)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 48) [0m
+  [4;35;1mDocumento Load (0.101832)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 51) [0m
+  [4;36;1mDocumento Load (0.203015)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 57) [0m
+  [4;35;1mDocumento Load (0.349791)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 190) [0m
+  [4;36;1mDocumento Load (0.132962)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 233) [0m
+  [4;35;1mDocumento Load (0.130648)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 352) [0m
+  [4;36;1mDocumento Load (0.116080)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 207) [0m
+  [4;35;1mDocumento Load (0.129063)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 217) [0m
+  [4;36;1mDocumento Load (0.260830)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 55) [0m
+  [4;35;1mDocumento Load (0.192457)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 255) [0m
+  [4;36;1mDocumento Load (0.093396)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 242) [0m
+  [4;35;1mDocumento Load (0.091938)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 498) [0m
+  [4;36;1mDocumento Load (0.181221)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 282) [0m
+  [4;35;1mDocumento Load (0.139941)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 69) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00208)
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001731)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001223)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000684)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000709)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000682)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000640)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000667)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000680)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001062)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000675)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000650)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001263)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000645)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000679)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001129)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000685)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00093)
+Completed in 8.09708 (0 reqs/sec) | Rendering: 5.77051 (71%) | DB: 2.31619 (28%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;36;1mParametroGeneral Columns (0.001951)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000434)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_sencillo (for 127.0.0.1 at 2012-06-21 18:41:42) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"cadena_busqueda"=>"modelos", "controller"=>"documento", "action"=>"buscar_sencillo", "commit"=>" Buscar documentos "}
+  [4;36;1mPalabra Load (0.001384)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'modelos') LIMIT 1[0m
+  [4;35;1mSQL (0.000281)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000256)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.002505)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.044608)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (295971) AND documento_id = documento.id GROUP BY documento_id HAVING true AND COUNT(*) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.05841 (17 reqs/sec) | DB: 0.05142 (88%) | 302 Found [http://localhost/documento/buscar_sencillo]
+  [4;35;1mParametroGeneral Columns (0.001684)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000661)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:41:42) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.002609)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.357315)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 77) [0m
+  [4;35;1mDocumento Load (0.126766)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 364) [0m
+  [4;36;1mDocumento Load (0.070844)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 498) [0m
+  [4;35;1mDocumento Load (0.223007)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 63) [0m
+  [4;36;1mDocumento Load (0.138749)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 228) [0m
+  [4;35;1mDocumento Load (0.136133)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 476) [0m
+  [4;36;1mDocumento Load (0.226448)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 550) [0m
+  [4;35;1mDocumento Load (0.049843)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 217) [0m
+  [4;36;1mDocumento Load (0.222851)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 243) [0m
+  [4;35;1mDocumento Load (0.570965)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 482) [0m
+  [4;36;1mDocumento Load (0.154917)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 51) [0m
+  [4;35;1mDocumento Load (0.056217)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 454) [0m
+  [4;36;1mDocumento Load (0.101498)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 46) [0m
+  [4;35;1mDocumento Load (0.243144)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 533) [0m
+  [4;36;1mDocumento Load (0.174559)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 21) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00214)
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001686)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000628)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000695)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000794)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000668)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000806)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000682)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000613)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000685)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000620)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000655)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000685)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000679)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001452)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000678)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000751)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00092)
+Completed in 8.42750 (0 reqs/sec) | Rendering: 5.54629 (65%) | DB: 2.87099 (34%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001622)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000452)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_sencillo (for 127.0.0.1 at 2012-06-21 18:42:09) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"cadena_busqueda"=>"redes", "controller"=>"documento", "action"=>"buscar_sencillo", "commit"=>" Buscar documentos "}
+  [4;35;1mPalabra Load (0.034053)[0m   [0mSELECT * FROM palabra WHERE (texto = 'redes') LIMIT 1[0m
+  [4;36;1mSQL (0.000676)[0m   [0;1mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;35;1mSQL (0.000434)[0m   [0mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;36;1mPalabra Columns (0.002989)[0m   [0;1mSHOW FIELDS FROM palabra[0m
+  [4;35;1mSQL (0.025279)[0m   [0mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (297246) AND documento_id = documento.id GROUP BY documento_id HAVING true AND COUNT(*) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.07301 (13 reqs/sec) | DB: 0.06550 (89%) | 302 Found [http://localhost/documento/buscar_sencillo]
+  [4;36;1mParametroGeneral Columns (0.002969)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000474)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:42:09) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;36;1mDocumento Columns (0.002375)[0m   [0;1mSHOW FIELDS FROM documento[0m
+  [4;35;1mDocumento Load (0.086011)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 58) [0m
+  [4;36;1mDocumento Load (0.220391)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 254) [0m
+  [4;35;1mDocumento Load (0.194877)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 565) [0m
+  [4;36;1mDocumento Load (0.101880)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 394) [0m
+  [4;35;1mDocumento Load (0.039744)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 124) [0m
+  [4;36;1mDocumento Load (0.072692)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 60) [0m
+  [4;35;1mDocumento Load (0.187032)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 260) [0m
+  [4;36;1mDocumento Load (0.138579)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 393) [0m
+  [4;35;1mDocumento Load (0.155976)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 570) [0m
+  [4;36;1mDocumento Load (1.527188)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 456) [0m
+  [4;35;1mDocumento Load (0.140066)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 104) [0m
+  [4;36;1mDocumento Load (0.099443)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 282) [0m
+  [4;35;1mDocumento Load (0.050706)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 611) [0m
+  [4;36;1mDocumento Load (0.073363)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 207) [0m
+  [4;35;1mDocumento Load (0.024337)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 46) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00197)
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001828)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000565)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001592)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000683)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000671)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000677)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000673)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000808)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000679)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000669)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001479)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000672)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000660)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000674)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000667)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000666)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00112)
+Completed in 8.33766 (0 reqs/sec) | Rendering: 5.19614 (62%) | DB: 3.13177 (37%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;36;1mParametroGeneral Columns (0.001678)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000461)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_sencillo (for 127.0.0.1 at 2012-06-21 18:42:34) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"cadena_busqueda"=>"calculo", "controller"=>"documento", "action"=>"buscar_sencillo", "commit"=>" Buscar documentos "}
+  [4;36;1mPalabra Load (0.021253)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'calculo') LIMIT 1[0m
+  [4;35;1mSQL (0.001192)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000539)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.002458)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.048401)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (296332) AND documento_id = documento.id GROUP BY documento_id HAVING true AND COUNT(*) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.08391 (11 reqs/sec) | DB: 0.07598 (90%) | 302 Found [http://localhost/documento/buscar_sencillo]
+  [4;35;1mParametroGeneral Columns (0.001679)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000519)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:42:34) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.002533)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.056395)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 4) [0m
+  [4;35;1mDocumento Load (0.029285)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 481) [0m
+  [4;36;1mDocumento Load (0.021817)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 508) [0m
+  [4;35;1mDocumento Load (0.100696)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 516) [0m
+  [4;36;1mDocumento Load (0.191835)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 97) [0m
+  [4;35;1mDocumento Load (0.184677)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 495) [0m
+  [4;36;1mDocumento Load (0.071839)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 131) [0m
+  [4;35;1mDocumento Load (0.027133)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 46) [0m
+  [4;36;1mDocumento Load (0.163215)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 550) [0m
+  [4;35;1mDocumento Load (0.059398)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 75) [0m
+  [4;36;1mDocumento Load (0.217383)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 77) [0m
+  [4;35;1mDocumento Load (0.033950)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 394) [0m
+  [4;36;1mDocumento Load (0.173620)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 561) [0m
+  [4;35;1mDocumento Load (0.084805)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 126) [0m
+  [4;36;1mDocumento Load (0.103011)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 9) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00217)
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001797)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000547)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000694)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000739)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000733)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000673)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001486)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000631)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000724)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000675)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000912)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000697)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000760)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000849)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000652)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000756)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00097)
+Completed in 6.24665 (0 reqs/sec) | Rendering: 4.69975 (75%) | DB: 1.53712 (24%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001676)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000420)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-06-21 18:42:57) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00173)
+Rendered layouts/_pie (0.00091)
+Completed in 0.00647 (154 reqs/sec) | Rendering: 0.00542 (83%) | DB: 0.00210 (32%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;35;1mParametroGeneral Columns (0.001738)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000456)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 18:42:59) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001011)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001926)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00085)
+Completed in 0.01700 (58 reqs/sec) | Rendering: 0.01299 (76%) | DB: 0.00513 (30%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001612)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000526)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:43:25) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"lineal", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"", "contenido"=>"", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;35;1mPalabra Load (0.001330)[0m   [0mSELECT * FROM palabra WHERE (texto = 'lineal') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000501)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'lineal') LIMIT 1[0m
+  [4;35;1mSQL (0.000294)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000259)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001466)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.033339)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (300025) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_titulo > 0 AND palabra_id IN ( 300025) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.04741 (21 reqs/sec) | DB: 0.03933 (82%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.001738)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000451)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:43:26) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.002316)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.027128)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 98) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001942)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000497)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00096)
+Completed in 0.24424 (4 reqs/sec) | Rendering: 0.20941 (85%) | DB: 0.03407 (13%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.002057)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000367)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:43:47) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"calculo", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"", "contenido"=>"", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;35;1mPalabra Load (0.000578)[0m   [0mSELECT * FROM palabra WHERE (texto = 'calculo') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000396)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'calculo') LIMIT 1[0m
+  [4;35;1mSQL (0.000400)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000244)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001477)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.007459)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (296332) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_titulo > 0 AND palabra_id IN ( 296332) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.01963 (50 reqs/sec) | DB: 0.01298 (66%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.001844)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000463)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:43:47) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.003688)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.132511)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 75) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.002022)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000501)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00090)
+Completed in 0.47144 (2 reqs/sec) | Rendering: 0.32913 (69%) | DB: 0.14103 (29%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001419)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000352)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:44:08) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"base", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"", "contenido"=>"", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;35;1mPalabra Load (0.001380)[0m   [0mSELECT * FROM palabra WHERE (texto = 'base') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000382)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'base') LIMIT 1[0m
+  [4;35;1mSQL (0.000272)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000262)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001518)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.064993)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (296263) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_titulo > 0 AND palabra_id IN ( 296263) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.07794 (12 reqs/sec) | DB: 0.07058 (90%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.001820)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000374)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:44:08) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.002351)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.084558)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 36) [0m
+  [4;35;1mDocumento Load (0.160785)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 406) [0m
+  [4;36;1mDocumento Load (0.184818)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 212) [0m
+  [4;35;1mDocumento Load (0.119251)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 32) [0m
+  [4;36;1mDocumento Load (0.103929)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 323) [0m
+  [4;35;1mDocumento Load (0.084733)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 420) [0m
+  [4;36;1mDocumento Load (0.165174)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 441) [0m
+  [4;35;1mDocumento Load (0.736014)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 191) [0m
+  [4;36;1mDocumento Load (0.618113)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 183) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001699)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000646)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000655)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000820)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001121)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000656)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001492)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000648)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000670)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000725)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00096)
+Completed in 4.67238 (0 reqs/sec) | Rendering: 2.39416 (51%) | DB: 2.27105 (48%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001820)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000546)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:44:39) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"base de datos", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"", "contenido"=>"", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;35;1mPalabra Load (0.001107)[0m   [0mSELECT * FROM palabra WHERE (texto = 'base') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.001245)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'de') LIMIT 1[0m
+  [4;35;1mPalabra Load (0.000627)[0m   [0mSELECT * FROM palabra WHERE (texto = 'datos') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000350)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'base') LIMIT 1[0m
+  [4;35;1mPalabra Load (0.000340)[0m   [0mSELECT * FROM palabra WHERE (texto = 'de') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000340)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'datos') LIMIT 1[0m
+  [4;35;1mSQL (0.000306)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000267)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001524)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.061719)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 49.2361050858056),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (296263, 296626, 295484) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_titulo > 0 AND palabra_id IN ( 296263, 296626, 295484) ) = 3 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.08035 (12 reqs/sec) | DB: 0.07019 (87%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.001701)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000459)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:44:39) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.002173)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (0.018026)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 420) [0m
+  [4;35;1mDocumento Load (0.379792)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 191) [0m
+  [4;36;1mDocumento Load (0.312453)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 183) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001692)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000637)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000771)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000710)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00092)
+Completed in 1.27289 (0 reqs/sec) | Rendering: 0.55276 (43%) | DB: 0.71841 (56%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001671)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000499)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:44:53) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"sistema", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"", "contenido"=>"", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;35;1mPalabra Load (0.028635)[0m   [0mSELECT * FROM palabra WHERE (texto = 'sistema') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000869)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'sistema') LIMIT 1[0m
+  [4;35;1mSQL (0.000549)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000499)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.002501)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.009108)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (297401) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_titulo > 0 AND palabra_id IN ( 297401) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.05248 (19 reqs/sec) | DB: 0.04433 (84%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.001415)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000457)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:44:53) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;35;1mDocumento Columns (0.001961)[0m   [0mSHOW FIELDS FROM documento[0m
+  [4;36;1mDocumento Load (1.082506)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 42) [0m
+  [4;35;1mDocumento Load (0.293648)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 507) [0m
+  [4;36;1mDocumento Load (0.111014)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 533) [0m
+  [4;35;1mDocumento Load (0.066341)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 48) [0m
+  [4;36;1mDocumento Load (0.148324)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 352) [0m
+  [4;35;1mDocumento Load (0.105774)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 64) [0m
+  [4;36;1mDocumento Load (0.216487)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 562) [0m
+  [4;35;1mDocumento Load (0.157813)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 397) [0m
+  [4;36;1mDocumento Load (0.073931)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 71) [0m
+  [4;35;1mDocumento Load (0.083276)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 432) [0m
+  [4;36;1mDocumento Load (0.105499)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 69) [0m
+  [4;35;1mDocumento Load (0.149972)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 255) [0m
+  [4;36;1mDocumento Load (0.052150)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 431) [0m
+  [4;35;1mDocumento Load (0.220227)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 55) [0m
+  [4;36;1mDocumento Load (0.211260)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 585) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+  [4;35;1mClasificacionDocumentoAcademico Columns (0.001998)[0m   [0mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.001084)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000728)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000683)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000672)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000669)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000682)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000689)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000679)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000671)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000570)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000640)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001386)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000797)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000665)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000990)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00081)
+Completed in 8.42181 (0 reqs/sec) | Rendering: 5.31570 (63%) | DB: 3.09566 (36%) | 200 OK [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.002147)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000597)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:45:19) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"datawarehouse", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"", "contenido"=>"", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;35;1mPalabra Load (0.001353)[0m   [0mSELECT * FROM palabra WHERE (texto = 'datawarehouse') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000467)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'datawarehouse') LIMIT 1[0m
+  [4;35;1mSQL (0.000266)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000249)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001266)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.001485)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (372209) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_titulo > 0 AND palabra_id IN ( 372209) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.01522 (65 reqs/sec) | DB: 0.00783 (51%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.002060)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000470)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:45:19) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+Redirected to http://localhost:3000/documento/busqueda_avanzada
+Completed in 0.00237 (422 reqs/sec) | DB: 0.00253 (106%) | 302 Found [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001821)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000370)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 18:45:19) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001182)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.002269)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00083)
+Completed in 0.02321 (43 reqs/sec) | Rendering: 0.01781 (76%) | DB: 0.00564 (24%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001897)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000414)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:45:38) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"datawarehouse", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"", "contenido"=>"", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;35;1mPalabra Load (0.000569)[0m   [0mSELECT * FROM palabra WHERE (texto = 'datawarehouse') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000351)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'datawarehouse') LIMIT 1[0m
+  [4;35;1mSQL (0.000265)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000254)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001552)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.000417)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (372209) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_titulo > 0 AND palabra_id IN ( 372209) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.01194 (83 reqs/sec) | DB: 0.00572 (47%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.002470)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000454)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:45:39) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+Redirected to http://localhost:3000/documento/busqueda_avanzada
+Completed in 0.00280 (356 reqs/sec) | DB: 0.00292 (104%) | 302 Found [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001881)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000381)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 18:45:39) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001337)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.002712)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00085)
+Completed in 0.02017 (49 reqs/sec) | Rendering: 0.01430 (70%) | DB: 0.00631 (31%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001431)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.002500)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:45:53) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"datawarehouse", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"", "contenido"=>"", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;35;1mPalabra Load (0.000405)[0m   [0mSELECT * FROM palabra WHERE (texto = 'datawarehouse') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000431)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'datawarehouse') LIMIT 1[0m
+  [4;35;1mSQL (0.000270)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000261)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001549)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.000367)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (372209) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_titulo > 0 AND palabra_id IN ( 372209) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.01229 (81 reqs/sec) | DB: 0.00721 (58%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.001850)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000460)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:45:53) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+Redirected to http://localhost:3000/documento/busqueda_avanzada
+Completed in 0.00225 (444 reqs/sec) | DB: 0.00231 (102%) | 302 Found [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001585)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000449)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 18:45:53) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000758)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001762)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00081)
+Completed in 0.02129 (46 reqs/sec) | Rendering: 0.01706 (80%) | DB: 0.00455 (21%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001677)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000398)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:45:57) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"datawarehouse", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"", "contenido"=>"", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;35;1mPalabra Load (0.000528)[0m   [0mSELECT * FROM palabra WHERE (texto = 'datawarehouse') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000362)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'datawarehouse') LIMIT 1[0m
+  [4;35;1mSQL (0.000292)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000361)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.001675)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.000378)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (372209) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_titulo > 0 AND palabra_id IN ( 372209) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.01219 (82 reqs/sec) | DB: 0.00567 (46%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.001705)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000455)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:45:57) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+Redirected to http://localhost:3000/documento/busqueda_avanzada
+Completed in 0.00228 (439 reqs/sec) | DB: 0.00216 (94%) | 302 Found [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001802)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000370)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 18:45:58) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000687)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001798)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00085)
+Completed in 0.02220 (45 reqs/sec) | Rendering: 0.01842 (82%) | DB: 0.00466 (20%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.001730)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000490)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_avanzado (for 127.0.0.1 at 2012-06-21 18:46:06) [POST]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"frase"=>"", "titulo"=>"relacional", "controller"=>"documento", "action"=>"buscar_avanzado", "fecha_hasta"=>"", "clasificacion_documento_academico_id"=>"", "resumen"=>"", "fecha_desde"=>"", "contenido"=>"", "autor"=>"", "palabras_clave"=>"", "commit"=>" Buscar documento "}
+  [4;35;1mPalabra Load (0.021115)[0m   [0mSELECT * FROM palabra WHERE (texto = 'relacional') LIMIT 1[0m
+  [4;36;1mPalabra Load (0.000653)[0m   [0;1mSELECT * FROM palabra WHERE (texto = 'relacional') LIMIT 1[0m
+  [4;35;1mSQL (0.000491)[0m   [0mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;36;1mSQL (0.000907)[0m   [0;1mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;35;1mPalabra Columns (0.002492)[0m   [0mSHOW FIELDS FROM palabra[0m
+  [4;36;1mSQL (0.004208)[0m   [0;1mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (296641) AND documento_id = documento.id GROUP BY documento_id HAVING true AND SUM( frecuencia_en_titulo > 0 AND palabra_id IN ( 296641) ) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://localhost:3000/documento/resultado_consulta
+Completed in 0.03993 (25 reqs/sec) | DB: 0.03209 (80%) | 302 Found [http://localhost/documento/buscar_avanzado]
+  [4;35;1mParametroGeneral Columns (0.001811)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000431)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 127.0.0.1 at 2012-06-21 18:46:06) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+Redirected to http://localhost:3000/documento/busqueda_avanzada
+Completed in 0.00276 (362 reqs/sec) | DB: 0.00224 (81%) | 302 Found [http://localhost/documento/resultado_consulta]
+  [4;35;1mParametroGeneral Columns (0.001484)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000443)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_avanzada (for 127.0.0.1 at 2012-06-21 18:46:07) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_avanzada"}
+Rendering  within layouts/application
+Rendering documento/busqueda_avanzada
+DEPRECATION WARNING: find_all is deprecated and will be removed from Rails 2.0 (use find(:all, ...))  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47documento47busqueda_avanzada46rhtml at /home/jose/BUSCONEST_development/busconest/app/views/documento/busqueda_avanzada.rhtml:50)
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001148)[0m   [0mSELECT * FROM clasificacion_documento_academico [0m
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001658)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+Rendered layouts/_pie (0.00089)
+Completed in 0.02224 (44 reqs/sec) | Rendering: 0.01829 (82%) | DB: 0.00473 (21%) | 200 OK [http://localhost/documento/busqueda_avanzada]
+  [4;35;1mParametroGeneral Columns (0.015236)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000719)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 127.0.0.1 at 2012-06-22 00:35:08) [GET]
+  Session ID: 6c2581753c7b71199056e73d255e0e14
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00329)
+Rendered layouts/_pie (0.00166)
+Completed in 0.01128 (88 reqs/sec) | Rendering: 0.00946 (83%) | DB: 0.01595 (141%) | 200 OK [http://localhost/documento/busqueda_sencilla]
+  [4;36;1mSQL (0.000512)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mParametroGeneral Columns (0.002012)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.001348)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#index (for 192.168.2.101 at 2012-06-28 20:48:54) [GET]
+  Session ID: b71590c12c9bd9918122b9cbfa07343b
+  Parameters: {"controller"=>"documento", "action"=>"index"}
+Redirected to http://192.168.2.103:3000/documento/busqueda_sencilla
+Completed in 0.00433 (231 reqs/sec) | DB: 0.00387 (89%) | 302 Found [http://192.168.2.103/]
+  [4;35;1mParametroGeneral Columns (0.001639)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000443)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 192.168.2.101 at 2012-06-28 20:48:55) [GET]
+  Session ID: b71590c12c9bd9918122b9cbfa07343b
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.01750)
+Rendered layouts/_pie (0.00671)
+Completed in 0.06208 (16 reqs/sec) | Rendering: 0.05657 (91%) | DB: 0.00208 (3%) | 200 OK [http://192.168.2.103/documento/busqueda_sencilla]
+  [4;35;1mParametroGeneral Columns (0.001695)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000429)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#index (for 192.168.2.103 at 2012-06-28 20:50:38) [GET]
+  Session ID: d5ce12636d902e4498a0e7ede2430c7a
+  Parameters: {"controller"=>"documento", "action"=>"index"}
+Redirected to http://192.168.2.103:3000/documento/busqueda_sencilla
+Completed in 0.00236 (423 reqs/sec) | DB: 0.00212 (89%) | 302 Found [http://192.168.2.103/]
+  [4;35;1mParametroGeneral Columns (0.001737)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000414)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#busqueda_sencilla (for 192.168.2.103 at 2012-06-28 20:50:38) [GET]
+  Session ID: d5ce12636d902e4498a0e7ede2430c7a
+  Parameters: {"controller"=>"documento", "action"=>"busqueda_sencilla"}
+Rendering  within layouts/application
+Rendering documento/busqueda_sencilla
+Rendered documento/_cuadro_buscar (0.00537)
+Rendered layouts/_pie (0.00097)
+Completed in 0.01499 (66 reqs/sec) | Rendering: 0.01011 (67%) | DB: 0.00215 (14%) | 200 OK [http://192.168.2.103/documento/busqueda_sencilla]
+  [4;35;1mParametroGeneral Columns (0.001657)[0m   [0mSHOW FIELDS FROM parametro_general[0m
+  [4;36;1mParametroGeneral Load (0.000396)[0m   [0;1mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#buscar_sencillo (for 192.168.2.101 at 2012-06-28 20:53:06) [POST]
+  Session ID: b71590c12c9bd9918122b9cbfa07343b
+  Parameters: {"controller"=>"documento", "cadena_busqueda"=>"jose", "action"=>"buscar_sencillo", "commit"=>" Buscar documentos "}
+  [4;35;1mPalabra Load (0.015686)[0m   [0mSELECT * FROM palabra WHERE (texto = 'jose') LIMIT 1[0m
+  [4;36;1mSQL (1.244268)[0m   [0;1mSELECT MAX(peso_numerico1) FROM documento[0m
+  [4;35;1mSQL (0.584410)[0m   [0mSELECT MAX( frecuencia_en_contenido ) FROM documento_palabra[0m
+  [4;36;1mPalabra Columns (0.001930)[0m   [0;1mSHOW FIELDS FROM palabra[0m
+  [4;35;1mSQL (0.043010)[0m   [0mSELECT documento_id, POW((1 - SUM(ln(1 + frecuencia_en_contenido + 4*frecuencia_en_titulo + 4*frecuencia_en_resumen + 4*frecuencia_en_palabras_clave))/ 24.6180525429028),2) + POW((1 - peso_numerico2/480.0), 2) AS campo_ordenamiento FROM documento_palabra, documento WHERE true AND palabra_id IN (297382) AND documento_id = documento.id GROUP BY documento_id HAVING true AND COUNT(*) = 1 ORDER BY campo_ordenamiento [0m
+Redirected to http://192.168.2.103:3000/documento/resultado_consulta
+Completed in 1.95672 (0 reqs/sec) | DB: 1.89136 (96%) | 302 Found [http://192.168.2.103/documento/buscar_sencillo]
+  [4;36;1mParametroGeneral Columns (0.001588)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000479)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#resultado_consulta (for 192.168.2.101 at 2012-06-28 20:53:08) [GET]
+  Session ID: b71590c12c9bd9918122b9cbfa07343b
+  Parameters: {"controller"=>"documento", "action"=>"resultado_consulta"}
+  [4;36;1mDocumento Columns (0.002315)[0m   [0;1mSHOW FIELDS FROM documento[0m
+  [4;35;1mDocumento Load (0.151725)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 490) [0m
+  [4;36;1mDocumento Load (0.870400)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 389) [0m
+  [4;35;1mDocumento Load (0.228285)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 561) [0m
+  [4;36;1mDocumento Load (0.315493)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 550) [0m
+  [4;35;1mDocumento Load (0.117504)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 2) [0m
+  [4;36;1mDocumento Load (0.164477)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 248) [0m
+  [4;35;1mDocumento Load (0.097607)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 516) [0m
+  [4;36;1mDocumento Load (0.173452)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 48) [0m
+  [4;35;1mDocumento Load (0.174437)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 142) [0m
+  [4;36;1mDocumento Load (0.059926)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 611) [0m
+  [4;35;1mDocumento Load (0.104725)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 497) [0m
+  [4;36;1mDocumento Load (0.552006)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 289) [0m
+  [4;35;1mDocumento Load (0.321330)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 507) [0m
+  [4;36;1mDocumento Load (0.199796)[0m   [0;1mSELECT * FROM documento WHERE (documento.`id` = 3) [0m
+  [4;35;1mDocumento Load (0.148094)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 78) [0m
+Rendering  within layouts/application
+Rendering documento/resultado_consulta
+Rendered documento/_cuadro_buscar (0.00222)
+  [4;36;1mClasificacionDocumentoAcademico Columns (0.001647)[0m   [0;1mSHOW FIELDS FROM clasificacion_documento_academico[0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.020645)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000634)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000822)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000645)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000596)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000614)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000957)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000786)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000643)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000781)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000633)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000703)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.001742)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;36;1mClasificacionDocumentoAcademico Load (0.000998)[0m   [0;1mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+  [4;35;1mClasificacionDocumentoAcademico Load (0.000607)[0m   [0mSELECT * FROM clasificacion_documento_academico WHERE (clasificacion_documento_academico.`id` = 1) [0m
+Rendered layouts/_pie (0.00094)
+Completed in 8.86488 (0 reqs/sec) | Rendering: 5.13636 (57%) | DB: 3.71709 (41%) | 200 OK [http://192.168.2.103/documento/resultado_consulta]
+  [4;36;1mParametroGeneral Columns (0.005044)[0m   [0;1mSHOW FIELDS FROM parametro_general[0m
+  [4;35;1mParametroGeneral Load (0.000438)[0m   [0mSELECT * FROM parametro_general WHERE (parametro_general.`id` = 'host_conest_admin') [0m
+
+
+Processing DocumentoController#obtener_archivo (for 192.168.2.101 at 2012-06-28 20:53:23) [GET]
+  Session ID: b71590c12c9bd9918122b9cbfa07343b
+  Parameters: {"controller"=>"documento", "action"=>"obtener_archivo", "id"=>"550"}
+  [4;36;1mDocumento Columns (0.003483)[0m   [0;1mSHOW FIELDS FROM documento[0m
+  [4;35;1mDocumento Load (0.215185)[0m   [0mSELECT * FROM documento WHERE (documento.`id` = 550) [0m
+Sending data Documento_550.pdf
+Completed in 0.29999 (3 reqs/sec) | Rendering: 0.00009 (0%) | DB: 0.22415 (74%) | 200 OK [http://192.168.2.103/documento/obtener_archivo/550]

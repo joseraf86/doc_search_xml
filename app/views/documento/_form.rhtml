@@ -1,0 +1,59 @@
+<%= error_messages_for 'documento' %>
+
+<!--[form:documento]-->
+
+<table>
+  <tr>
+    <td>Archivo:</td>
+    <td><%= file_field_tag 'archivo',{:size => 60} %></td>
+  </tr>
+  <tr>
+    <td>Titulo:</td>
+    <td><%= text_field_tag 'titulo', nil, {:size => "70"} %></td>
+  </tr>
+  <tr>
+    <td>Resumen:</td>
+    <td><%= text_area_tag 'resumen', nil, {:cols => "68"} %></td>
+  </tr>
+  <tr>
+    <td>Palabras clave:</td>
+    <td><%= text_area_tag 'palabras_clave', nil, {:cols => "68"} %></td>
+  </tr>
+  <tr>
+    <td>Tiene premio:</td>
+    <td><%= check_box_tag "tiene_premio" %></td>
+  </tr>
+  <tr>
+    <td colspan = "2"> * Mencion y licenciatura</td>
+  </tr>
+  <tr>
+    <td colspan = "2">* Fecha</td>
+  </tr>
+  <tr>
+    <td>Cedula1:</td>
+    <td><%= text_field_tag 'cedula' %></td>
+  </tr>
+  <tr>
+    <td>Cedula2:</td>
+    <td><%= text_field_tag 'cedula2' %></td>
+  </tr>
+</table>
+
+
+
+<!--[eoform:documento]-->
+
+
+
+
+
+
+<!--
+
+
+<label for="cedula">Cedula autor:</label><br/>
+<%= text_field_tag 'cedula'  %>
+
+
+
+-->

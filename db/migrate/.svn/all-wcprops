@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1304/conest1/busconest/db/migrate
+END
+003_create_parametro_generals.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1304/conest1/busconest/db/migrate/003_create_parametro_generals.rb
+END
+004_create_clasificacion_documento_academicos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1304/conest1/busconest/db/migrate/004_create_clasificacion_documento_academicos.rb
+END
+002_create_modulos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1304/conest1/busconest/db/migrate/002_create_modulos.rb
+END
+001_create_palabras.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1304/conest1/busconest/db/migrate/001_create_palabras.rb
+END

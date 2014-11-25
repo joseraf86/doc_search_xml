@@ -1,0 +1,23 @@
+
+<%
+  @funcion_pagina = "Acerca de BUSCONEST"
+%>
+
+<div id = "info_pagina">
+  <div id="funcion_pagina"><%= h @funcion_pagina%></div>
+</div>
+<%=xbr%>
+
+<div align = "center">
+  <%=image_tag("busconest.png",{:width => "200"})%>
+</div>
+
+<br/>
+
+<div style = "margin-left: 20px; margin-right: 20px">
+  <%= h("BUSCONEST es una aplicación Web dependiente de") + link_to("CONEST", host_conest_admin) + h(" la cual ofrece a cualquier usuario la posibilidad de ubicar y consultar trabajos académicos realizados por la comunidad de la Faculta de Ciencias (estudiantes o docentes). Entre los documentos disponibles para las búsquedas se encuentra el Trabajo especial de Grado realizado por los estudiantes durante el proceso de grado. ")%>
+</div>
+
+<br/>
+
+

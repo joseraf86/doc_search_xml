@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1304/conest1/busconest/test/unit
+END
+modulo_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1304/conest1/busconest/test/unit/modulo_test.rb
+END
+palabra_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1304/conest1/busconest/test/unit/palabra_test.rb
+END
+procesar_documento_worker_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1304/conest1/busconest/test/unit/procesar_documento_worker_test.rb
+END
+parametro_general_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1304/conest1/busconest/test/unit/parametro_general_test.rb
+END
+procesar_documentos_worker_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1304/conest1/busconest/test/unit/procesar_documentos_worker_test.rb
+END
+clasificacion_documento_academico_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1304/conest1/busconest/test/unit/clasificacion_documento_academico_test.rb
+END
+documento_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1304/conest1/busconest/test/unit/documento_test.rb
+END

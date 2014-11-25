@@ -1,0 +1,9 @@
+<% enlaces=["busqueda_sencilla", "busqueda_avanzada", "resultado_consulta", "dummy"] %>
+
+
+<% for enlace in enlaces %>
+
+  <%= link_to(enlace, :action => enlace) + "<br/>" %>
+
+<% end %> 
+

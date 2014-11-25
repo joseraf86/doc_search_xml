@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1304/conest1/busconest/app/models
+END
+documento.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1304/conest1/busconest/app/models/documento.rb
+END
+procesos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1304/conest1/busconest/app/models/procesos.rb
+END
+palabra.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1304/conest1/busconest/app/models/palabra.rb
+END
+paginador.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1304/conest1/busconest/app/models/paginador.rb
+END
+parametro_general.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1304/conest1/busconest/app/models/parametro_general.rb
+END
+busqueda.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1304/conest1/busconest/app/models/busqueda.rb
+END
+clasificacion_documento_academico.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1304/conest1/busconest/app/models/clasificacion_documento_academico.rb
+END

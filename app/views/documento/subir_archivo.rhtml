@@ -1,0 +1,39 @@
+<% @titulo_pagina = "Subir nuevo documento" %>
+
+<%= stylesheet_link_tag 'upload-progress' %>
+<%= javascript_include_tag 'upload-progress' %>
+<%
+  @uuid = Time.now.to_i.to_s
+  controlador_upload = 'files'
+  accion_upload = 'upload'
+  session[:upload_progress] = {:controlador => "documento", :accion => "llenar_titulo_resumen"}
+%>
+
+
+<p>
+Paso 1: Subir el archivo (Debe ser en formato PDF)
+</p>
+
+<div class="seccion_formulario">         
+<br/>
+<%= start_form_tag( {:controller => controlador_upload, :action => accion_upload, :upload_id => @uuid}, {:multipart => true, :target => 'UploadIFrame', :id => "UploadForm"}) %>
+
+  <%= file_field_tag :data %>
+
+  <div id="ProgressMessage">Seleccione el archivo...</div>
+  <div id="ProgressBarContainer">
+  	<div id="ProgressBarShell" style="display:none;">
+  		<div id="ProgressBar">
+  			<span id="ProgressBarText">0%</span>
+  		</div>
+  	</div>
+  </div>
+  <%= submit_tag "Cargar archivo", {:type => 'button', :onClick => "javascript:submitUploadForm('UploadForm', " + "'#{escape_javascript controlador_upload}', " + "'#{escape_javascript @uuid.to_s}');" } %>
+
+
+<%= end_form_tag %>
+
+</div>
+
+<iframe id="UploadIFrame" name="UploadIFrame" src="about:blank">aqui va el iframe de salida</iframe>
+

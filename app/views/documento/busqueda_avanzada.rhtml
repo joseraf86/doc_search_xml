@@ -1,0 +1,67 @@
+<%= calendar_date_select_includes %>
+<%
+  @funcion_pagina = "Búsqueda avanzada"
+%>
+
+<div align = "center">
+
+<div id = "info_pagina">
+  <div id="funcion_pagina"><%= h @funcion_pagina%> <%=link_to(image_tag("busconest.png",{:width => "35", :border => "0"}),{:action => "busqueda_sencilla"})%></div>
+</div>
+<%=xbr%>
+
+
+<% form_tag({:action => 'buscar_avanzado'}) do %>
+
+  <table border = 0>
+  <%
+  # lo que viene es un hash campo => descripcion
+  algunos_campos = ["contenido", "frase", "autor", "titulo", "resumen", "palabras_clave"]
+  descripciones = {"contenido" => "Con estas palabras", "frase" => "Con esta frase", "autor" => "Autor", "titulo" => "En titulo", "resumen" => "En resumen", "palabras_clave" => "En palabras clave" }
+  %>
+
+  <% for campo in algunos_campos %>
+    <% descripcion = descripciones[campo]; %>
+    <tr>
+      <td class = "etiqueta_campo_busqueda_avanzada" ><%=descripcion%>:</td>
+      <td>
+        <%= text_field_tag(campo, @busqueda.send(campo)[:texto], {:size => "40"}) %>
+        <%= "<div id = 'error_campo'>#{@busqueda.send(campo)[:error]}</div>"%>
+        <%= "<div id = 'advertencia_campo'>#{@busqueda.send(campo)[:advertencia]}</div>"%>
+      </td>
+    </tr>
+  <% end %>
+
+    <tr>
+      <td class = "etiqueta_campo_busqueda_avanzada" >Fecha publicacion:</td>
+      <td>
+        <%= calendar_date_select_tag "fecha_desde",nil,{:popup => :force, :onclick => "this.value=''"} %>
+        (Desde)
+        <br/>
+        <%= calendar_date_select_tag "fecha_hasta",nil,{:popup => :force, :onclick => "this.value=''"} %>
+        (Hasta)
+      </td>
+    </tr>
+
+    <tr>
+      <td class = "etiqueta_campo_busqueda_avanzada" >Tipo de publicación:</td>
+      <td>
+        <%
+          clasificaciones_documento_academico = ClasificacionDocumentoAcademico.find_all
+        %>
+        <%= select_tag("clasificacion_documento_academico_id", "<option value = ''>--Cualquiera--</option>" + clasificaciones_documento_academico.collect{|actual| "<option value = '#{actual.id}'>#{actual.nombre_largo}</option>"}.join)%>
+      </td>
+    </tr>
+
+  </table>
+
+
+  <br/>
+  <br/>
+  <%=submit_tag(" Buscar documento ") %>
+  
+</div>
+
+<% end %>
+
+

@@ -1,0 +1,16 @@
+<%
+  @funcion_pagina = "Ayuda"
+%>
+
+<div id = "info_pagina">
+  <div id="funcion_pagina"><%= h @funcion_pagina%></div>
+</div>
+<%=xbr%>
+
+<%=h "Para llevar a cabo las busquedas en este repositorio digital de publicaciones debe tener en cuenta estas reglas:"%>
+
+<ul>
+  <li><%="Solo coloque palabras"%></li>
+  <li><%="No se aceptan numeros ni signos, salvo el delimitador de frases (\") en \'Busqueda sencilla\'"%></li>
+
+</ul>

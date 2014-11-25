@@ -1,0 +1,26 @@
+#ruta del mongrel
+#/home/jose/.rvm/gems/ruby-1.8.7-p358@busconest_jorge/bin/mongrel_rails
+#/home/jose/.rvm/gems/ruby-1.8.7-p358@busconest_jorge/gems/activesupport-1.4.4/lib/active_support/dependencies.rb
+
+OK, here's ONE answer. I got mongrel to boot...but it's hacky, and doesn't solve the real problem...but at least for NOW I can get back to work on this project.
+
+Here's what I did...YES..it's HACKY.
+
+I edited the file throwing the error...dependencies.rb
+
+I added a hook to call out the specific path to mongrel rails if that was the file it was trying to load.
+
+def load(file, *extras) #:nodoc:
+
+if file == "mongrel_rails"
+  file ="/usr/bin/mongrel_rails" #pon la ruta de tu mongrel
+end
+Dependencies.new_constants_in(Object) { super(file, *extras) }
+  rescue Exception => exception  # errors from loading file
+  exception.blame_file! file
+  raise
+end
+
+Again, I would really like to fix the underlying problem here...but this at least let me boot up.
+
+

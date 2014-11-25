@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1304/conest1/busconest/vendor/plugins/backgroundrb/test/test_workers
+END
+test_worker.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1304/conest1/busconest/vendor/plugins/backgroundrb/test/test_workers/test_worker.rb
+END
+cron_worker.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1304/conest1/busconest/vendor/plugins/backgroundrb/test/test_workers/cron_worker.rb
+END

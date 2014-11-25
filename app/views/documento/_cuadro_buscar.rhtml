@@ -1,0 +1,6 @@
+<% form_tag({:action => 'buscar_sencillo'}, {:style => "display: inline;"}) do %>
+  <%= text_field_tag("cadena_busqueda",@busqueda.cadena_busqueda[:texto],{:size => "50"}) %>
+  &nbsp&nbsp&nbsp
+  <%=submit_tag(" Buscar documentos ") %>
+<% end %>
+

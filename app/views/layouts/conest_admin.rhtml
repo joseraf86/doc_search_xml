@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<%
+# CODIGO DE ADAPTACION PARA CONEST ADMINISTRACION
+@titulo_pagina = "Repositorio digital de documentos"
+fecha = Time.now.strftime "%d-%m-%Y"
+migaja = "Administración > #{@titulo_pagina}"
+@titulo_modulo = "Módulo de Administración"
+=begin
+session[:conest_admin] = true
+session[:usuario] = {}
+session[:licenciatura] = {}
+session[:parametros_generales] = {}
+session[:periodo_academico_actual] = {}
+=end
+@version = "0.6.0_3"
+
+
+%>
+
+<title><%=@titulo_global%> :: <%=@titulo_pagina%></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%= stylesheet_link_tag "conest" %>
+<%= javascript_include_tag :defaults %>
+</head>
+<body> 
+<div id="contenedor"> 
+  <div id="cabecera"> 
+    <h2><%=@titulo_modulo%></h2> 
+    <div id="tope"> 
+      <div id="fecha"><%=fecha%></div> 
+      <span id="contactenos">
+        <a href="mailto:cestudio@ciens.ucv.ve">Contáctenos <%=image_tag 'buzon.gif', :border => 0 %></a>
+      </span> 
+      <span id="cerrar_sesion"><%= link_to "Cerrar Sesión", host_conest_admin + "/principal/cerrar_sesion" %></span> 
+    </div> 
+  </div> 
+  <div id="ubicacion"> 
+    <div id="datos_usuario">
+      <p> 
+      <h3>Usuario: </h3> 
+        <%=session[:usuario][:nombre_estandar]%>
+      </p>
+      <p>  
+      <h3>Roles: </h3> 
+      <%=session[:usuario][:roles_estandar]%>
+      </p> 
+      <p>  
+      <h3>Licenciatura Actual: </h3> 
+      <%=session[:licenciatura][:nombre_corto]%> 
+            <h3><%=link_to "(Cambiar)", host_conest_admin + "/principal/cambiando_licenciatura?accion=principal&control=principal" %></h3>
+         </p> 
+      <p>  
+      <h3>Periodo Actual: </h3> 
+      <%=session[:periodo_academico_actual][:nombre_periodo]%> 
+        <h3><%=link_to "(Cambiar)", host_conest_admin + "/principal/cambiando_periodo?accion=principal&control=principal" %></h3>
+        <br/> 
+      <h3>Promocion Actual: </h3> 
+      <%=session[:parametros_generales][:grado_periodo_lectivo]%>-<%=session[:parametros_generales][:grado_ano_lectivo]%> 
+      </p> 
+      
+      
+      <%  if controller.action_name != 'principal' %>
+        <div id="regresar1">
+          <% url_principal_conest_estudiante = host_conest_admin + "/principal/principal" %>
+          <a href = "<%=url_principal_conest_estudiante%>" >Regresar a Principal</a>
+        </div>
+      <% end %>
+
+    </div> 
+
+ 
+    <div id="ubicador"> 
+      <div id="migaja"><%=migaja%></div> 
+      <h1><%=@titulo_pagina%></h1> 
+    </div> 
+  </div> 
+
+  <div id="cuerpo"> 
+	<!-- INICIO DEL CUERPO -->
+
+    <% if flash[:mensaje_error].size > 0 %>
+    	<div class="errores"><b>Error: </b><%=h flash[:mensaje_error]%></div> 
+    <%end %>
+    <% if flash[:mensaje_alerta].size > 0 %>
+    	<div class="alerta"><b>Alerta: </b><%=h flash[:mensaje_alerta]%></div> 
+    <%end %>
+    <% if flash[:mensaje].size > 0 %>
+    	<div class="mensaje"><b>Información: </b><%=h flash[:mensaje]%></div> 
+    <% end %>
+
+    <%=@content_for_layout%>
+
+	<!-- FIN DEL CUERPO -->
+  </div> 
+  <div id="pie"> 
+    <div id="pie_enlaces">
+    <%= link_to "Acerca de CONEST", :controller => "principal", :action => "acerca_de" %> </div> 
+    <div id="derechos">
+    <a href="http://www.ucv.ve">Universidad Central de Venezuela</a> | 
+    <a href="http://www.ciens.ucv.ve">Facultad de Ciencias</a> - CONEST 2007 Versión: <%=@version%>
+    </div> 
+  </div> 
+</div> 
+</body>
+</html>
+
+<% yield %>

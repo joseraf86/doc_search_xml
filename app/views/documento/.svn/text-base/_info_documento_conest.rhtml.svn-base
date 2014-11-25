@@ -1,0 +1,15 @@
+<!--
+<div id="info_nuevo_documento">
+-->
+
+<%=@documento.autor%>
+  <%=image_tag "vineta_separador3.gif"%>
+<%=@documento.licenciatura%>
+  <%=image_tag "vineta_separador3.gif"%>
+<%=@documento.facultad%>
+  <%=image_tag "vineta_separador3.gif"%>
+<%=@documento.universidad%>
+
+<!--
+<div>
+-->

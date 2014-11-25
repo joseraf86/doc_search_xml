@@ -1,0 +1,17 @@
+<% form_tag({:action => "iniciar_sesion"}, {}) do %>
+
+  <table>
+    <tr>
+      <td>Login:</td>
+      <td><%= text_field_tag 'login', nil, {:size => "16"} %></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><%= password_field_tag 'password', nil, {:size => "16"} %></td>
+    </tr>
+  </table>
+
+  <br/>
+  <%=submit_tag("Entrar") %>
+  
+<% end %>
